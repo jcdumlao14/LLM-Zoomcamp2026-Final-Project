@@ -42,3 +42,6 @@ build/
 # Coverage
 .coverage
 htmlcov/
+
+# macOS
+.DS_Store
