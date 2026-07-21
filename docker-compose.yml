@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  medrag-ai:
+    build: .
+    container_name: medrag-ai
+    ports:
+      - "8501:8501"
+
+    volumes:
+      - .:/app
+
+    env_file:
+      - .env
+
+    restart: unless-stopped
