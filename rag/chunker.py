@@ -1,51 +1,74 @@
 """
 MedRAG AI
-Phase 4 - Document Chunking
+Document Chunker
 """
 
-from pathlib import Path
 import json
+from pathlib import Path
 
 
-def chunk_text(text, chunk_size=500, overlap=100):
+# Chunk configuration
+CHUNK_SIZE = 1200        # characters
+CHUNK_OVERLAP = 200      # characters
+
+
+def chunk_text(text, chunk_size=CHUNK_SIZE, overlap=CHUNK_OVERLAP):
     """
     Split text into overlapping chunks.
     """
 
+    if not text:
+        return []
+
     chunks = []
 
     start = 0
+    text_length = len(text)
 
-    while start < len(text):
+    while start < text_length:
 
-        end = start + chunk_size
+        end = min(start + chunk_size, text_length)
 
-        chunk = text[start:end]
+        chunk = text[start:end].strip()
 
-        chunks.append(chunk)
+        if chunk:
+            chunks.append(chunk)
 
-        start += chunk_size - overlap
+        if end == text_length:
+            break
+
+        start = end - overlap
 
     return chunks
 
 
-def chunk_document(json_path: Path):
+def chunk_document(json_file: Path):
+    """
+    Chunk one processed document.
+    """
 
-    with open(json_path, "r", encoding="utf-8") as f:
+    with open(json_file, "r", encoding="utf-8") as f:
         document = json.load(f)
 
-    text = document["text"]
+    # Extract filename
+    filename = document.get("filename", json_file.with_suffix(".pdf").name)
 
-    chunks = chunk_text(text)
+    # Extract text
+    text = document.get("text", "")
+
+    if not text.strip():
+        return []
+
+    text_chunks = chunk_text(text)
 
     output = []
 
-    for i, chunk in enumerate(chunks):
+    for i, chunk in enumerate(text_chunks):
 
         output.append(
             {
+                "filename": filename,
                 "chunk_id": i,
-                "filename": document["filename"],
                 "text": chunk,
             }
         )

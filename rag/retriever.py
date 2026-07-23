@@ -6,20 +6,33 @@ Phase 6 - Semantic Retriever
 from rag.embedding import EmbeddingModel
 from rag.vector_store import collection
 
+embedder = EmbeddingModel()
 
-class Retriever:
 
-    def __init__(self):
+def search(query, k=5):
+    """
+    Semantic search over ChromaDB.
+    """
 
-        self.embedder = EmbeddingModel()
+    query_embedding = embedder.encode([query])[0]
 
-    def search(self, query, top_k=5):
+    results = collection.query(
+        query_embeddings=[query_embedding.tolist()],
+        n_results=k
+    )
 
-        query_embedding = self.embedder.encode([query])[0]
+    documents = results["documents"][0]
+    metadatas = results["metadatas"][0]
+    distances = results["distances"][0]
 
-        results = collection.query(
-            query_embeddings=[query_embedding.tolist()],
-            n_results=top_k
-        )
+    output = []
 
-        return results
+    for doc, meta, dist in zip(documents, metadatas, distances):
+        output.append({
+            "text": doc,
+            "filename": meta["filename"],
+            "chunk_id": meta["chunk_id"],
+            "distance": dist,
+        })
+
+    return output

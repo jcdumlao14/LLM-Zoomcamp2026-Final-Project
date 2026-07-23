@@ -1,0 +1,72 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+.venv/
+venv/
+
+# Git
+.git/
+.gitignore
+
+# Chroma database
+chroma_db/
+
+# Data
+data/
+
+# Logs
+logs/
+
+# Notebooks
+notebooks/
+
+# Monitoring
+monitoring/
+
+# Evaluation
+evaluation/
+
+# Cache
+.cache/
+.pytest_cache/
+.mypy_cache/
+
+# VS Code
+.vscode/
+
+# OS
+.DS_Store
+
+# Environment
+.env
+
+# Docker
+docker-compose.yml
+
+# Streamlit cache
+.streamlit/
+
+# Temporary
+tmp/
+*.tmp
+
+.git
+.gitignore
+
+.venv
+__pycache__
+*.pyc
+
+chroma_db
+logs
+notebooks
+
+data
+
+.env
+
+.vscode

@@ -1,0 +1,32 @@
+[
+    {
+        "question": "What is deep learning in chest X-ray analysis?"
+    },
+    {
+        "question": "What are the advantages of transfer learning in medical imaging?"
+    },
+    {
+        "question": "How are transformers used in medical imaging?"
+    },
+    {
+        "question": "What is semantic segmentation?"
+    },
+    {
+        "question": "How does retrieval-augmented generation work?"
+    },
+    {
+        "question": "What is convolutional neural network?"
+    },
+    {
+        "question": "What are Vision Transformers?"
+    },
+    {
+        "question": "What is chest pathology detection?"
+    },
+    {
+        "question": "How is AI used in radiology?"
+    },
+    {
+        "question": "What datasets are commonly used for chest X-ray analysis?"
+    }
+]

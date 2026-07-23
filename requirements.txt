@@ -1,11 +1,18 @@
 # ===========================
 # Core LLM & RAG
 # ===========================
-openai>=1.98.0
+google-genai>=1.28.0
 chromadb>=1.0.15
 sentence-transformers>=5.0.0
 transformers>=4.54.0
 torch>=2.7.0
+
+# ===========================
+# API
+# ===========================
+fastapi>=0.116.1
+uvicorn[standard]>=0.35.0
+pydantic>=2.11.7
 
 # ===========================
 # PDF Processing
@@ -33,6 +40,7 @@ plotly>=6.2.0
 # Utilities
 # ===========================
 python-dotenv>=1.1.1
+requests>=2.32.4
 tqdm>=4.67.1
 
 # ===========================

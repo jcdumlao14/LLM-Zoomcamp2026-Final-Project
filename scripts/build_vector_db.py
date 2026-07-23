@@ -18,7 +18,17 @@ def main():
         with open(file, "r", encoding="utf-8") as f:
             chunks = json.load(f)
 
+        # Skip empty chunk files
+        if len(chunks) == 0:
+            print(f"Skipping {file.name} (no chunks found)")
+            continue
+
         texts = [c["text"] for c in chunks]
+
+        # Skip if all texts are empty
+        if len(texts) == 0:
+            print(f"Skipping {file.name} (no text found)")
+            continue
 
         embeddings = embedder.encode(texts)
 

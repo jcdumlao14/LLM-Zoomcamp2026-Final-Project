@@ -2,32 +2,26 @@
 Test MedRAG AI Retrieval
 """
 
-from rag.retriever import Retriever
+from rag.retriever import search
 
 
 def main():
+    query = input("Question: ")
 
-    retriever = Retriever()
-
-    question = input("Question: ")
-
-    results = retriever.search(question)
+    results = search(query, k=5)
 
     print("=" * 60)
 
-    docs = results["documents"][0]
-    metas = results["metadatas"][0]
-
-    for i, (doc, meta) in enumerate(zip(docs, metas), start=1):
-
+    for i, result in enumerate(results, 1):
         print(f"\nResult {i}")
         print("-" * 60)
-        print(f"Source : {meta['filename']}")
-        print(f"Chunk  : {meta['chunk_id']}")
+        print("Source :", result["filename"])
+        print("Chunk  :", result["chunk_id"])
+        print("Score  :", round(result["distance"], 4))
         print()
-        print(doc[:700])
-        print()
+        print(result["text"][:600])
 
 
 if __name__ == "__main__":
     main()
+    
