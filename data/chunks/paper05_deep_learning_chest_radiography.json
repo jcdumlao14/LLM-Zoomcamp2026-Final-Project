@@ -1,0 +1,437 @@
+[
+  {
+    "chunk_id": 0,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "RESEARCH ARTICLE\nDeep learning in chest radiography: Detection\nof findings and presence of change\nRamandeep SinghID1,2, Mannudeep K. Kalra1,2, Chayanin NitiwarangkulID1,2,3, John\nA. Patti1,2, Fatemeh Homayounieh1,2, Atul Padole1,2, Pooja Rao4, Preetham Putha4,\nVictorine V. Muse1,2, Amita Sharma1,2, Subba R. DigumarthyID1,2*\n1 Department of Radiology, Massachusetts General Hospital, Boston, Massachusetts, United States of\nAmerica, 2 Harvard Medical School, Boston, Massachusetts, United States of "
+  },
+  {
+    "chunk_id": 1,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "usetts, United States of\nAmerica, 2 Harvard Medical School, Boston, Massachusetts, United States of America, 3 Division of\nDiagnostic Radiology, Department of Diagnostic and Therapeutic Radiology, Faculty of Medicine,\nRamathibodi Hospital, Mahidol University, Bangkok, Thailand, 4 Qure.ai, 101 Raheja Titanium, Goregaon\nEast, Mumbai, India\n* sdigumarthy@mgh.harvard.edu\nAbstract\nBackground\nDeep learning (DL) based solutions have been proposed for interpretation of several imag-\ning modalities inclu"
+  },
+  {
+    "chunk_id": 2,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "ing (DL) based solutions have been proposed for interpretation of several imag-\ning modalities including radiography, CT, and MR. For chest radiographs, DL algorithms\nhave found success in the evaluation of abnormalities such as lung nodules, pulmonary\ntuberculosis, cystic fibrosis, pneumoconiosis, and location of peripherally inserted central\ncatheters. Chest radiography represents the most commonly performed radiological test for\na multitude of non-emergent and emergent clinical indications. T"
+  },
+  {
+    "chunk_id": 3,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "nly performed radiological test for\na multitude of non-emergent and emergent clinical indications. This study aims to assess\naccuracy of deep learning (DL) algorithm for detection of abnormalities on routine frontal\nchest radiographs (CXR), and assessment of stability or change in findings over serial\nradiographs.\nMethods and findings\nWe processed 874 de-identified frontal CXR from 724 adult patients (> 18 years) with DL\n(Qure AI). Scores and prediction statistics from DL were generated and reco"
+  },
+  {
+    "chunk_id": 4,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "nts (> 18 years) with DL\n(Qure AI). Scores and prediction statistics from DL were generated and recorded for the\npresence of pulmonary opacities, pleural effusions, hilar prominence, and enlarged cardiac\nsilhouette. To establish a standard of reference (SOR), two thoracic radiologists assessed\nall CXR for these abnormalities. Four other radiologists (test radiologists), unaware of SOR\nand DL findings, independently assessed the presence of radiographic abnormalities. A\ntotal 724 radiographs were"
+  },
+  {
+    "chunk_id": 5,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "ngs, independently assessed the presence of radiographic abnormalities. A\ntotal 724 radiographs were assessed for detection of findings. A subset of 150 radiographs\nwith follow up examinations was used to asses change over time. Data were analyzed with\nreceiver operating characteristics analyses and post-hoc power analysis.\nResults\nAbout 42% (305/ 724) CXR had no findings according to SOR; single and multiple abnor-\nmalities were seen in 23% (168/724) and 35% (251/724) of CXR. There was no stati"
+  },
+  {
+    "chunk_id": 6,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "and multiple abnor-\nmalities were seen in 23% (168/724) and 35% (251/724) of CXR. There was no statistical\ndifference between DL and SOR for all abnormalities (p = 0.2\u00ef\u00bf\u20300.8).\nThe area under the\nPLOS ONE | https://doi.org/10.1371/journal.pone.0204155\nOctober 4, 2018\n1 / 12\na1111111111\na1111111111\na1111111111\na1111111111\na1111111111\nOPEN ACCESS\nCitation: Singh R, Kalra MK, Nitiwarangkul C, Patti\nJA, Homayounieh F, Padole A, et al. (2018) Deep\nlearning in chest radiography: Detection of findings\na"
+  },
+  {
+    "chunk_id": 7,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": ", Homayounieh F, Padole A, et al. (2018) Deep\nlearning in chest radiography: Detection of findings\nand presence of change. PLoS ONE 13(10):\ne0204155. https://doi.org/10.1371/journal.\npone.0204155\nEditor: George A. Eapen, University of Texas MD\nAnderson Cancer Center, UNITED STATES\nReceived: July 20, 2018\nAccepted: September 4, 2018\nPublished: October 4, 2018\nCopyright: \u00ef\ubfbd2018 Singh et al. This is an open\naccess article distributed under the terms of the\nCreative Commons Attribution License, whic"
+  },
+  {
+    "chunk_id": 8,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "an open\naccess article distributed under the terms of the\nCreative Commons Attribution License, which\npermits unrestricted use, distribution, and\nreproduction in any medium, provided the original\nauthor and source are credited.\nData Availability Statement: All relevant data are\nwithin the paper and its Supporting Information\nfiles.\nFunding: The author(s) received no specific\nfunding for this work.\nCompeting interests: Mannudeep K. Kalra, MD,\nhas received unrelated industrial research grants\nfrom"
+  },
+  {
+    "chunk_id": 9,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "\nCompeting interests: Mannudeep K. Kalra, MD,\nhas received unrelated industrial research grants\nfrom Siemens Healthineers and Cannon Medical\nSystems. Co-authors, PR, and PP are employees\nof Qure AI, Mumbai, India. This does not alter our\n\ncurve (AUC) for DL and test radiologists ranged between 0.837\u00ef\u00bf\u20300.929\nand 0.693\u00ef\u00bf\u20300.923,\nrespectively. DL had lowest AUC (0.758) for assessing changes in pulmonary opacities over\nfollow up CXR. Presence of chest wall implanted devices negatively affected the ac"
+  },
+  {
+    "chunk_id": 10,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "ry opacities over\nfollow up CXR. Presence of chest wall implanted devices negatively affected the accuracy\nof DL algorithm for evaluation of pulmonary and hilar abnormalities.\nConclusions\nDL algorithm can aid in interpretation of CXR findings and their stability over follow up CXR.\nHowever, in its present version, it is unlikely to replace radiologists due to its limited specific-\nity for categorizing specific findings.\nIntroduction\nIn 2010, approximately 183 million radiographic procedures were"
+  },
+  {
+    "chunk_id": 11,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "zing specific findings.\nIntroduction\nIn 2010, approximately 183 million radiographic procedures were performed in the United\nStates on 15,900 conventional and digital radiography units. Chest radiographs (CXR) repre-\nsent close to half of the radiographs in the United States (44%). Most radiographs were\nacquired in outpatient clinics (48%) followed by hospital-based radiography [1]. An estimated\nannual growth rate of about 5.5% per year has been reported in prior surveys on radiography.\nOn the o"
+  },
+  {
+    "chunk_id": 12,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "nnual growth rate of about 5.5% per year has been reported in prior surveys on radiography.\nOn the one hand, there is tremendous volume and resultant burden, on the other hand, several\npast studies have reported challenges and inaccuracies associated with radiographic interpreta-\ntion [2\u00ef\u00bf\u20304].\nThe Centers for Medicare and Medicaid Services (CMS) announced a 7% decrease\nin reimbursement for computed radiography from calendar year 2018 to address the issue of\nrising healthcare expenses.\nDeep learn"
+  },
+  {
+    "chunk_id": 13,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "d radiography from calendar year 2018 to address the issue of\nrising healthcare expenses.\nDeep learning (DL) algorithms have been proposed as a solution to expedite, automate,\nand improve the interpretation of several imaging examinations including CXR. Prior studies\nhave reported encouraging results of various DL algorithms for assessment of specific condi-\ntions such as pulmonary tuberculosis, cystic fibrosis, lines and tubes (position of peripherally\ninserted central catheters and endotrachea"
+  },
+  {
+    "chunk_id": 14,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "ystic fibrosis, lines and tubes (position of peripherally\ninserted central catheters and endotracheal tubes), pneumoconiosis and lung nodules on CXR\n[5\u00ef\u00bf\u203016].\nAnother DL algorithm, now a commercially available application, subtracts ribs from\nsingle energy CXR to aid and expedite their interpretation by the radiologists.\nTo support and encourage research and development of DL in imaging, the National Insti-\ntutes of Health (NIH) has released more than 100,000 deidentified CXR for free and open\na"
+  },
+  {
+    "chunk_id": 15,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "nal Insti-\ntutes of Health (NIH) has released more than 100,000 deidentified CXR for free and open\naccess [17]. We used these deidentified CXR datasets to assess the accuracy of a commercial\ndeep learning (DL) algorithm for detection of abnormalities and to assess change in findings\nover serial radiographs.\nMethods and materials\nOur retrospective study was performed on de-identified NIH image data of adult frontal CXR.\nInstitutional review board (IRB) approval was waived.\nCXR data\nPublicly avail"
+  },
+  {
+    "chunk_id": 16,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": " of adult frontal CXR.\nInstitutional review board (IRB) approval was waived.\nCXR data\nPublicly available, de-identified ChestX-ray8 database (images and data entry file) was down-\nloaded from the National Institute of Health website (https://nihcc.app.box.com/v/ChestXray-\nNIHCC accessed on January 30, 2018). This database contains labels for CXR based on pres-\nence and absence of 14 radiographic abnormalities. Several subjects have more than one CXR,\nwhich enable evaluation of stability or chang"
+  },
+  {
+    "chunk_id": 17,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "bnormalities. Several subjects have more than one CXR,\nwhich enable evaluation of stability or change in abnormalities over serial radiographs.\nDL and chest radiograph\nPLOS ONE | https://doi.org/10.1371/journal.pone.0204155\nOctober 4, 2018\n2 / 12\nadherence to PLOS ONE policies on sharing data\nand materials.\n\nAll CXR were selected randomly from the ChestX-ray8 datasheets (Microsoft EXCEL,\nMicrosoft Inc., Redmond, Wash.) without looking at the accompanying CXR to ensure unbi-\nased inclusion of CXR"
+  },
+  {
+    "chunk_id": 18,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": " Inc., Redmond, Wash.) without looking at the accompanying CXR to ensure unbi-\nased inclusion of CXR in the study. None of the standards of reference or test radiologists were\npart of the selection process.\nOf the total 874 CXR included in the study, there were 574 single CXR (one CXR from each\npatient) from 574 patients and 300 CXR (two CXR from each patient) from the remaining 150\npatients. Data labels of mass, nodules, pneumonia, atelectasis, or infiltration were grouped as\npulmonary opacity;"
+  },
+  {
+    "chunk_id": 19,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": " labels of mass, nodules, pneumonia, atelectasis, or infiltration were grouped as\npulmonary opacity; 374 CXR were selected from this group. Additional CXR were selected\nwith data labels of effusion (n = 75), enlarged cardiac silhouette (n = 75), and those without\nany assessed findings (n = 200). Next, we identified CXR from 150 patients with (n = 100\npatients) and without (n = 50 patients) any change in radiographic findings between the base-\nline and follow up CXR.\nWe excluded the lateral radio"
+  },
+  {
+    "chunk_id": 20,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "nge in radiographic findings between the base-\nline and follow up CXR.\nWe excluded the lateral radiographs, oblique views, status post total pneumonectomy,\nand patients with a metal prosthesis, since the applied DL algorithm has not been trained\nfor these views and situations. The final dataset included 874 CXR belonging to 724 patients\n(394M;330F) patients with mean age 54 \u00b1 16 years. The radiographs in the ChestX-ray8 data-\nbase are provided in PNG file format with 1024 x 1024 size and 8 bits "
+  },
+  {
+    "chunk_id": 21,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "aphs in the ChestX-ray8 data-\nbase are provided in PNG file format with 1024 x 1024 size and 8 bits gray-scale values.\nDL algorithm\nThe DL algorithm (Qure AI) assessed in our study has been installed in hospitals in India. The\nalgorithm does not have the United States Food and Drug Administration (FDA) approval at\nthe time of writing this manuscript.\nThe DL algorithm is based on a set of convolutional neural networks (CNNs), each trained\nto identify a specific abnormality on frontal CXR. A datas"
+  },
+  {
+    "chunk_id": 22,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "onal neural networks (CNNs), each trained\nto identify a specific abnormality on frontal CXR. A dataset of 1,150,084 CXR and the corre-\nsponding radiology reports from various centers in India were used to develop the algorithm.\nNatural language processing algorithms were used to parse unstructured radiology reports and\nextract information about the presence of abnormalities in the chest X-ray. These extracted\nfindings were used as labels when training the CNNs. Individual networks were trained t"
+  },
+  {
+    "chunk_id": 23,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "se extracted\nfindings were used as labels when training the CNNs. Individual networks were trained to\nidentify normal radiographs as well as those with the following findings: blunting of costophre-\nnic angle, pleural effusion, pulmonary opacity, consolidation, cavitation, emphysema, intersti-\ntial fibrosis, parenchymal calcification, enlarged cardiac silhouette, hilar prominence, and\ndegenerative changes in the thoracic spine.\nDuring the algorithm development process, radiographs were resized t"
+  },
+  {
+    "chunk_id": 24,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": " changes in the thoracic spine.\nDuring the algorithm development process, radiographs were resized to a fixed size and\nnormalized to reduce source dependent variance. The CNNs were then trained to detect\nabnormal findings on the resized radiographs. The network architectures, modified versions\nof either densenets [18] or resnets [19] were pre-trained on the task of separating CXR from\nradiographs of other body regions. For each abnormality, multiple models, both densenets,\nand resnets were train"
+  },
+  {
+    "chunk_id": 25,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "of other body regions. For each abnormality, multiple models, both densenets,\nand resnets were trained with different parameters and augmentations. A majority ensembling\nscheme combines the predictions from these selected models and to decide the presence/\nabsence of an abnormality. Algorithms were validated using an independent validation dataset\nof 93,972 frontal CXR.\nSpecific abnormalities (cavitation, emphysema, interstitial fibrosis) were excluded from our\nstudy due to lower representation "
+  },
+  {
+    "chunk_id": 26,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "itation, emphysema, interstitial fibrosis) were excluded from our\nstudy due to lower representation and reporting heterogeneity. The randomly selected 874\nCXR\u2019s in our study was neither used for training or validation of the algorithm Fig 1. For these\nCXR\u2019s, the algorithm provided probability statistics in percentage likelihood for the presence\nof findings on a continuous scale (values between 0 to 1). Additional separate scores for predic-\ntions percentage, (0 for value < 0.5; and 1 for \u0015 0.5) "
+  },
+  {
+    "chunk_id": 27,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "o 1). Additional separate scores for predic-\ntions percentage, (0 for value < 0.5; and 1 for \u0015 0.5) were generated. Heat maps with anno-\ntated findings were displayed on duplicate copies of the CXR. The following four findings\nDL and chest radiograph\nPLOS ONE | https://doi.org/10.1371/journal.pone.0204155\nOctober 4, 2018\n3 / 12\n\nwere assessed with the algorithm: pulmonary opacities, pleural effusions, hilar prominence,\nand enlarged cardiac silhouette.\nStandard of reference (SOR) and test radiolo"
+  },
+  {
+    "chunk_id": 28,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "ons, hilar prominence,\nand enlarged cardiac silhouette.\nStandard of reference (SOR) and test radiologists\nTo establish the SOR, two experienced, fellowship-trained, thoracic subspecialty radiologists\n(SD with 16 years of subspecialty experience; MK with 12 years of subspecialty experience)\nassessed all 874 CXR in consensus for absence (score 0) or presence (score 1) of pulmonary\nopacities, pleural effusions, hilar prominence, and enlarged cardiac silhouette. SOR radiolo-\ngists also recorded the "
+  },
+  {
+    "chunk_id": 29,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": " effusions, hilar prominence, and enlarged cardiac silhouette. SOR radiolo-\ngists also recorded the presence of any lines, tubes and drains projecting over the CXR.\nFig 1. Flow-chart diagram illustrating development, validation, and testing of DL algorithm.\nhttps://doi.org/10.1371/journal.pone.0204155.g001\nDL and chest radiograph\nPLOS ONE | https://doi.org/10.1371/journal.pone.0204155\nOctober 4, 2018\n4 / 12\n\nSeparately, four thoracic subspecialty radiologists (JP with 35 years of experience; CN "
+  },
+  {
+    "chunk_id": 30,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "018\n4 / 12\n\nSeparately, four thoracic subspecialty radiologists (JP with 35 years of experience; CN with\n5 years of experience; AS with 25 years of experience and VM with 30 years of experience)\nserved as test radiologists for the study. The test radiologists independently evaluated the pres-\nence of the previously described four findings in the 724 CXR on the same two-point scale\n(absence of a finding, score 0; presence, score 1). The test radiologists were unaware of the DL\nand SOR findings. A"
+  },
+  {
+    "chunk_id": 31,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "nding, score 0; presence, score 1). The test radiologists were unaware of the DL\nand SOR findings. A total of 150 serial CXRs were assessed for follow up of findings by SOR\nand test radiologists. Microsoft EXCEL worksheets were used for data entry and analysis of the\nfindings.\nStatistical analysis\nMicrosoft EXCEL and SPSS statistical software (IBM SPSS Statistics, Armonk, NY) were used\nfor data analysis. Receiver operating characteristics (ROC) analyses were performed to deter-\nmine the separate"
+  },
+  {
+    "chunk_id": 32,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "alysis. Receiver operating characteristics (ROC) analyses were performed to deter-\nmine the separate area under the curve (AUC) for the DL algorithm and the four test radiolo-\ngists against interpretation of the same findings by the SOR. Pair-wise two tailed t-tests\n(Microsoft EXCEL) were performed to compare detection of four radiographic abnormalities\n(pulmonary opacities, hilar prominence, pleural effusion, and enlarged cardiac silhouette)\nbetween the SOR and the DL algorithm as well as betwe"
+  },
+  {
+    "chunk_id": 33,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "ral effusion, and enlarged cardiac silhouette)\nbetween the SOR and the DL algorithm as well as between the SOR and the four test radiolo-\ngists. A p-value of less than 0.05 was deemed as statistically significant.\nA post-hoc analysis (http://clincalc.com/stats/Power.aspx) was performed to determine if\nthe number of radiographs with and without abovementioned abnormalities were adequate\nfor assessing the DL algorithm.\nResults\nDetection of findings\nAbout 42% (303/724) with a single CXR had no pulm"
+  },
+  {
+    "chunk_id": 34,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "ng the DL algorithm.\nResults\nDetection of findings\nAbout 42% (303/724) with a single CXR had no pulmonary opacities, pleural effusion, hilar\nprominence, and enlarged cardiac silhouette (absence of labeled findings). Single and multiple\nfindings were seen in 23% (168/724) and 35% (251/724) of CXR, respectively. Distribution of\nspecific findings was: pulmonary opacities (336/724, 46%), pleural effusion (136/724, 19%),\nhilar prominence (134/724, 19%), and enlarged cardiac silhouette (122/724, 17%)."
+  },
+  {
+    "chunk_id": 35,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "ion (136/724, 19%),\nhilar prominence (134/724, 19%), and enlarged cardiac silhouette (122/724, 17%). The AUC\nfor detection of CXR findings with the DL algorithm and the four test radiologists are summa-\nrized in Table 1. The AUC are shown in Fig 2. DL generated heat maps for detection of find-\nings are as shown in Fig 3.\nThe DL algorithm missed pleural effusions, hilar prominence, pulmonary opacities and car-\ndiomegaly in 32, 29, 62 and 11 CXR, respectively. DL also had false positive pleural ef"
+  },
+  {
+    "chunk_id": 36,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "ies and car-\ndiomegaly in 32, 29, 62 and 11 CXR, respectively. DL also had false positive pleural effusion\nTable 1. Summary of AUC for detection of radiographic abnormalities in CXR.\nDetection of findings\nAttribute\nDL\nR1\nR2\nR3\nR4\nEnlarged cardiac silhouette\n0.936\n(0.905\u00ef\u00bf\u20300.967\n)\n0.862\n(0.820\u00ef\u00bf\u20300.904)\n0.801\n(0.750\u00ef\u00bf\u20300\n.852)\n0.868\n(0.832\u00ef\u00bf\u20300.9\n04)\n0.788\n(0.738\u00ef\u00bf\u20300.8\n37)\nPleural effusion\n0.863\n(0.819\u00ef\u00bf\u20300.906\n)\n0.831\n(0.785\u00ef\u00bf\u20300.878)\n0.887\n(0.851\u00ef\u00bf\u20300\n.923)\n0.808\n(0.761\u00ef\u00bf\u20300.8\n56)\n0.853\n(0.812\u00ef\u00bf\u20300.8\n9"
+  },
+  {
+    "chunk_id": 37,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "9\u00ef\u00bf\u20300.906\n)\n0.831\n(0.785\u00ef\u00bf\u20300.878)\n0.887\n(0.851\u00ef\u00bf\u20300\n.923)\n0.808\n(0.761\u00ef\u00bf\u20300.8\n56)\n0.853\n(0.812\u00ef\u00bf\u20300.8\n94)\nPulmonary opacity\n0.843\n(0.812\u00ef\u00bf\u20300.874\n)\n0.792\n(0.757\u00ef\u00bf\u20300.826)\n0.789\n(0.754\u00ef\u00bf\u20300\n.823)\n0.773\n(0.737\u00ef\u00bf\u20300.8\n09)\n0.758\n(0.722\u00ef\u00bf\u20300.7\n94)\nHilar prominence\n0.852\n(0.809\u00ef\u00bf\u20300.895\n)\n0.697\n(0.641\u00ef\u00bf\u20300.752)\n0.710\n(0.654\u00ef\u00bf\u20300\n.765)\n0.749\n(0.695\u00ef\u00bf\u20300.8\n03)\n0.736\n(0.683\u00ef\u00bf\u20300.7\n90)\nThe AUC values for DL algorithm (DL) and the test radiologists (R1, R2, R3 and R4). The numbers in parenthesis represent AUC with 95% "
+  },
+  {
+    "chunk_id": 38,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "L) and the test radiologists (R1, R2, R3 and R4). The numbers in parenthesis represent AUC with 95% confidence interval.\nhttps://doi.org/10.1371/journal.pone.0204155.t001\nDL and chest radiograph\nPLOS ONE | https://doi.org/10.1371/journal.pone.0204155\nOctober 4, 2018\n5 / 12\n\n(23 CXR), hilar prominence (47 CXR), pulmonary opacity (50 CXR) and enlarged cardiac sil-\nhouette (23 CXR). There was no statistical difference between DL and SOR for all abnormali-\nties (p = 0.2\u00ef\u00bf\u20300.5).\nFrontal radiograph im"
+  },
+  {
+    "chunk_id": 39,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "istical difference between DL and SOR for all abnormali-\nties (p = 0.2\u00ef\u00bf\u20300.5).\nFrontal radiograph image with heat map for false positive detection of\npleural effusion is shown in Fig 4.\nThe four test radiologists did not identify the following findings when compared to the\nSOR: pleural effusion (on 38, 18, 41, 26 CXR), enlarged cardiac silhouette (22, 38, 13, 35), hilar\nprominence (69, 66, 60, 57) and pulmonary opacities (81, 71, 104, 78). The test radiologists\ncalled false positive enlarged car"
+  },
+  {
+    "chunk_id": 40,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": " and pulmonary opacities (81, 71, 104, 78). The test radiologists\ncalled false positive enlarged cardiac silhouette (on 58, 52, 95, 83 CXR), pulmonary opacities\n(68, 82, 56, 98), pleural effusion (34, 55, 48, 61) and hilar prominence (54, 52, 32, 60). There\nwas a significant statistical difference in radiographic findings for enlarged cardiac silhouette\nbetween SOR and R1 (p = 0.02), SOR and R3 (p<0.05) and SOR and R4 (p = 0.002). There\nwas statistically significant difference between SOR and R3"
+  },
+  {
+    "chunk_id": 41,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "<0.05) and SOR and R4 (p = 0.002). There\nwas statistically significant difference between SOR and R3 (p = 0.01) for hilar prominence.\nFig 2. ROC curves for the DL algorithm and the four test radiologists (R1, R2, R3 and R4) in for pulmonary opacities (O), pleural effusion (PE), hilar\nprominence (HP) and enlarged cardiac silhouette (C).\nhttps://doi.org/10.1371/journal.pone.0204155.g002\nDL and chest radiograph\nPLOS ONE | https://doi.org/10.1371/journal.pone.0204155\nOctober 4, 2018\n6 / 12\n\nFig 3. T"
+  },
+  {
+    "chunk_id": 42,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": " radiograph\nPLOS ONE | https://doi.org/10.1371/journal.pone.0204155\nOctober 4, 2018\n6 / 12\n\nFig 3. True positive pulmonary opacities. Frontal CXR belonging to two separate patients. Unprocessed CXR (a, c)\ndemonstrate nodular opacities in the right lung. The corresponding heat maps from DL algorithm (b, d) accurately\ndetected and annotated (in red) these abnormalities.\nhttps://doi.org/10.1371/journal.pone.0204155.g003\nFig 4. Frontal chest radiograph (a) without radiographic abnormality. The DL al"
+  },
+  {
+    "chunk_id": 43,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "al.pone.0204155.g003\nFig 4. Frontal chest radiograph (a) without radiographic abnormality. The DL algorithm generated heat map (b)\nlabels false positive pleural effusion on the right side.\nhttps://doi.org/10.1371/journal.pone.0204155.g004\nDL and chest radiograph\nPLOS ONE | https://doi.org/10.1371/journal.pone.0204155\nOctober 4, 2018\n7 / 12\n\nIn the included CXR, there were port catheters (62/113, 55%), peripherally inserted central\ncatheter or PICC lines (16/113, 14%), intercostal chest tubes (14"
+  },
+  {
+    "chunk_id": 44,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "5%), peripherally inserted central\ncatheter or PICC lines (16/113, 14%), intercostal chest tubes (14/113, 12%), generators for\npacemaker or defibrillator devices (14/113, 12%), and chest wall ECG leads (7/113, 6%).\nImplanted port catheters and generators of pacemaker or defibrillator interfered with the per-\nformance of the DL algorithm and resulted in false positive pulmonary opacity in 15% (17/\n113) of CXR with such devices. Some implanted port catheters (14/62, 23%), intercostal chest\ntubes ("
+  },
+  {
+    "chunk_id": 45,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "113) of CXR with such devices. Some implanted port catheters (14/62, 23%), intercostal chest\ntubes (2/14, 14%), and ECG leads (1/7, 14%) were interpreted as false positives for pulmonary\nopacities (as depicted in Fig 5).\nChanges in findings\nA pair of radiographs was available for 150 within the subset of 724 CXR. The pair of 150\nradiographs (150x 2, 300 radiographs) were used to assess change.\nIn the baseline CXR, SOR reported pulmonary opacities (58/150 CXR, 39%), pleural effu-\nsions (43/150 CX"
+  },
+  {
+    "chunk_id": 46,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "the baseline CXR, SOR reported pulmonary opacities (58/150 CXR, 39%), pleural effu-\nsions (43/150 CXR, 29%), hilar prominence (29/150 CXR, 19%), and enlarged cardiac silhou-\nette (28/150 CXR, 19%). On the follow up CXR, there were pulmonary opacities (62/150,\n41%), pleural effusions (42/150, 28%), hilar prominence (31/150, 21%), and enlarged cardiac\nsilhouette (25/150, 17%) (P = 0.001\u00ef\u00bf\u20300.02).\nOn the follow-up CXR, SOR found following changes compared to the baseline CXR: pul-\nmonary opacities ("
+  },
+  {
+    "chunk_id": 47,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "the follow-up CXR, SOR found following changes compared to the baseline CXR: pul-\nmonary opacities (33/150, 22%), pleural effusion (21/150, 14%), enlarged cardiac silhouette\n(13/150, 9%), and hilar prominence (8/150, 5%). The corresponding changes for DL were 35%\n(53/150), 23% (34/150), 23% (34/150), and 23% (35/150). For the test radiologists, the corre-\nsponding changes in findings were 22\u00ef\u00bf\u203030%\n(33-46/150), 13\u00ef\u00bf\u203022%\n(20-33/150), 8\u00ef\u00bf\u203013%\n(12-20/\n150), and 5\u00ef\u00bf\u203012%\n(7-18/150), respectively. The "
+  },
+  {
+    "chunk_id": 48,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "\n(33-46/150), 13\u00ef\u00bf\u203022%\n(20-33/150), 8\u00ef\u00bf\u203013%\n(12-20/\n150), and 5\u00ef\u00bf\u203012%\n(7-18/150), respectively. The AUC for detecting the change in CXR findings\nwith the DL algorithm and for the four test radiologists are summarized in Table 2. The heat\nmaps are as shown in Fig 6.\nPost-hoc power calculation\nPost-hoc power analysis revealed that (http://clincalc.com/stats/Power.aspx) study was ade-\nquately powered for detecting up to 95% of the assessed abnormalities in 421 abnormal CXR\nand up to 1% false positi"
+  },
+  {
+    "chunk_id": 49,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": " for detecting up to 95% of the assessed abnormalities in 421 abnormal CXR\nand up to 1% false positive abnormalities in 303 CXR without any assessed abnormalities with\na type 1 error rate of 0.01.\nFig 5. Implanted Port catheter projects in the left mid lung zone (a). Heat map from DL algorithm misinterpreted the\nport catheter as a focal pulmonary opacity. This is apparent on the accompanying heat map image (b).\nhttps://doi.org/10.1371/journal.pone.0204155.g005\nDL and chest radiograph\nPLOS ONE | "
+  },
+  {
+    "chunk_id": 50,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "map image (b).\nhttps://doi.org/10.1371/journal.pone.0204155.g005\nDL and chest radiograph\nPLOS ONE | https://doi.org/10.1371/journal.pone.0204155\nOctober 4, 2018\n8 / 12\n\nDiscussion\nDetection of CXR findings\nThe overall accuracy of DL algorithm was better or equal to test radiologists with different lev-\nels of experience. DL algorithm had similar accuracy for detection of enlarged cardiac silhou-\nette, pleural effusion and pulmonary opacities in CXR. The DL algorithm, as well as the test\nradiolog"
+  },
+  {
+    "chunk_id": 51,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "tte, pleural effusion and pulmonary opacities in CXR. The DL algorithm, as well as the test\nradiologists, had the highest accuracy for assessing enlarged cardiac silhouette. Prior studies\nfrom Wang et al. (AUC 0.807) [17], Yao et al. (AUC 0.0904) [20] and Rajpurkar (AUC 0.9248)\n[21] have also reported a higher accuracy of DL algorithms for detection of cardiomegaly. In\nline with the radiology reports of CXR at our institution, we chose \u00ef\u00bf\u2030enlarged\ncardiac silhou-\nette\u00ef\u00bf\u2030\nas a descriptor for card"
+  },
+  {
+    "chunk_id": 52,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "rts of CXR at our institution, we chose \u00ef\u00bf\u2030enlarged\ncardiac silhou-\nette\u00ef\u00bf\u2030\nas a descriptor for cardiomegaly used in other previously published studies [17, 20, 21].\nThe accuracy of our DL algorithm for detecting pleural effusions (AUC 0.872) is better than\nthe accuracy reported by Wang et al. (AUC 0.784) and nearly identical to accuracies reported\nby Yao et al. (AUC 0.859) and Rajpurkar et al. (AUC 0.8638) [17, 20, 21]. These studies [17, 20,\n21] used the same ChestX-ray8 datasets that were use"
+  },
+  {
+    "chunk_id": 53,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "UC 0.8638) [17, 20, 21]. These studies [17, 20,\n21] used the same ChestX-ray8 datasets that were used in our study. The AUC of DL for detec-\ntion of pleural effusions and pulmonary opacities in our study was lower than perfect accuracy\n(AUC 0.95\u00ef\u00bf\u20301.00)\nreported by Becker et al [22]. These differences can be attributed to varia-\ntions in DL techniques, sample size, patient population, a gamut of radiographic findings, and\nquality of CXR between the two studies.\nDetection of hilar prominence was "
+  },
+  {
+    "chunk_id": 54,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "adiographic findings, and\nquality of CXR between the two studies.\nDetection of hilar prominence was more accurate with the DL algorithm than for either\nof the test radiologists. To our best knowledge, this finding has not been assessed in prior stud-\nies on DL algorithms for CXR interpretation. The higher performance of DL relative to the\nFig 6. Frontal CXR demonstrates a subtle patchy opacity in right mid zone (a), which is annotated (in red) on the heat\nmap generated from DL algorithm (b). On "
+  },
+  {
+    "chunk_id": 55,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "right mid zone (a), which is annotated (in red) on the heat\nmap generated from DL algorithm (b). On subsequent follow-up CXR (c), the heat map did not mark any abnormality\n(resolution).\nhttps://doi.org/10.1371/journal.pone.0204155.g006\nTable 2. Summary of AUC for change in abnormalities over follow-up CXR.\nChange in findings\nAttribute\nDL\nR1\nR2\nR3\nR4\nEnlarged cardiac silhouette\n0.925\n(0.837\u00ef\u00bf\u20301.000\n)\n0.680\n(0.505\u00ef\u00bf\u20300.855)\n0.793\n(0.628\u00ef\u00bf\u20300\n.958)\n0.680\n(0.505\u00ef\u00bf\u20300.8\n55)\n0.744\n(0.572\u00ef\u00bf\u20300.9\n16)\nPleura"
+  },
+  {
+    "chunk_id": 56,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "\n)\n0.680\n(0.505\u00ef\u00bf\u20300.855)\n0.793\n(0.628\u00ef\u00bf\u20300\n.958)\n0.680\n(0.505\u00ef\u00bf\u20300.8\n55)\n0.744\n(0.572\u00ef\u00bf\u20300.9\n16)\nPleural effusion\n0.782\n(0.657\u00ef\u00bf\u20300.907\n)\n0.752\n(0.617\u00ef\u00bf\u20300.886)\n0.670\n(0.531\u00ef\u00bf\u20300\n.809)\n0.808\n(0.696\u00ef\u00bf\u20300.9\n21)\n0.849\n(0.746\u00ef\u00bf\u20300.9\n52)\nPulmonary opacity\n0.687\n(0.572\u00ef\u00bf\u20300.802\n)\n0.702\n(0.591\u00ef\u00bf\u20300.813)\n0.778\n(0.675\u00ef\u00bf\u20300\n.881)\n0.833\n(0.750\u00ef\u00bf\u20300.9\n17)\n0.783\n(0.687\u00ef\u00bf\u20300.8\n79)\nHilar prominence\n0.735\n(0.533\u00ef\u00bf\u20300.937\n)\n0.569\n(0.349\u00ef\u00bf\u20300.789)\n0.607\n(0.379\u00ef\u00bf\u20300\n.836)\n0.579\n(0.357\u00ef\u00bf\u20300.8\n31)\n0.770\n(0.565\u00ef\u00bf\u20300.9\n75)\nThe AUC for "
+  },
+  {
+    "chunk_id": 57,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "69\n(0.349\u00ef\u00bf\u20300.789)\n0.607\n(0.379\u00ef\u00bf\u20300\n.836)\n0.579\n(0.357\u00ef\u00bf\u20300.8\n31)\n0.770\n(0.565\u00ef\u00bf\u20300.9\n75)\nThe AUC for the DL algorithm and the test radiologists (R1, R2, R3 and R4). The numbers in parenthesis represent AUC with 95% confidence interval.\nhttps://doi.org/10.1371/journal.pone.0204155.t002\nDL and chest radiograph\nPLOS ONE | https://doi.org/10.1371/journal.pone.0204155\nOctober 4, 2018\n9 / 12\n\nradiologists may be explained based on the relatively subjective nature of this finding com-\npared to other fin"
+  },
+  {
+    "chunk_id": 58,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "s may be explained based on the relatively subjective nature of this finding com-\npared to other findings. Conceivably, with different sets of SOR radiologists or test radiologists,\nthe accuracy of hilar prominence might have been different. This implies that instead of radiol-\nogists, a better SOR for CXR is chest CT from the same patient since it can provide robust\nand objective verification of ground truth for complex radiographic findings such as hilar\nprominence that can be overcalled due t"
+  },
+  {
+    "chunk_id": 59,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "ground truth for complex radiographic findings such as hilar\nprominence that can be overcalled due to differences in techniques, patient rotation, and lung\nvolumes.\nPulmonary opacities such as atelectasis, infiltration, pneumonia, consolidation, fibrosis,\nmass, and nodules were analyzed separately in prior publications [17, 20, 21]. The DL algo-\nrithm in our study was not trained to classify the opacities as pulmonary fibrosis, masses,\nand nodules, and thus these findings were not separately ass"
+  },
+  {
+    "chunk_id": 60,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "pacities as pulmonary fibrosis, masses,\nand nodules, and thus these findings were not separately assessed in our study. Furthermore,\natelectasis, infiltration, pneumonia, and consolidation can co-exist in the same anatomic\nregion of the lung, and their radiographic appearance can be similar. Therefore, we assessed\nthese findings jointly as pulmonary opacities. The accuracy of detection of pulmonary opaci-\nties in our study was not different from those reported in prior studies [17, 20, 21] for s"
+  },
+  {
+    "chunk_id": 61,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "y opaci-\nties in our study was not different from those reported in prior studies [17, 20, 21] for similar\nabnormalities.\nChange in CXR findings\nAlthough substantially better than the four test radiologists for presence or lack of changes in\npulmonary opacities, the accuracy of DL as noted from the ROC analyses (Table 2) was lowest\nwhen compared to the SOR. This may have been due to variations in radiographic technique,\nor patient-related factors (such as differences in inspiratory effort and pa"
+  },
+  {
+    "chunk_id": 62,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "radiographic technique,\nor patient-related factors (such as differences in inspiratory effort and patient rotation over\nserial radiographs) on the appearance of pulmonary opacities. To our best knowledge, prior\nstudies have not assessed the accuracy of DL for change or stability in findings on serial CXR.\nImplications\nOur study implies that DL based algorithm has high accuracy for detection of specific radio-\ngraphic abnormalities such as pulmonary opacities, pleural effusions, enlarged cardiac "
+  },
+  {
+    "chunk_id": 63,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "cific radio-\ngraphic abnormalities such as pulmonary opacities, pleural effusions, enlarged cardiac silhou-\nette, and hilar prominence. More work is needed to optimize the performance on follow up\nCXR, particularly for pulmonary opacities. The study also raises questions regarding the valid-\nity of radiologists as appropriate SOR given the subjectivity associated with detection and clas-\nsification of radiographic findings. Differences between accuracy of test and SOR radiologists\nraise concern "
+  },
+  {
+    "chunk_id": 64,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "n of radiographic findings. Differences between accuracy of test and SOR radiologists\nraise concern about the consistency and subjectivity of radiographic interpretation suggesting\nthe need for a better SOR such as chest CT. Therefore, the results of our study should be inter-\npreted with caution. However, substantially better sensitivity of CT compared to CXR will also\nconfound Further improvements in the assessed DL algorithm are needed to classify pulmo-\nnary opacities and elucidate their ana"
+  },
+  {
+    "chunk_id": 65,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "ts in the assessed DL algorithm are needed to classify pulmo-\nnary opacities and elucidate their anatomic location. DL algorithms for CXR interpretation\nshould also detect, segment, and exclude implanted devices and external foreign objects pro-\njecting over the lung fields, which can otherwise result in false positive findings as noted in our\nstudy. Despite these limitations, our study adds to a growing body of evidence regarding the\nutility of DL algorithms for detection of findings on CXR.\nTh"
+  },
+  {
+    "chunk_id": 66,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "growing body of evidence regarding the\nutility of DL algorithms for detection of findings on CXR.\nThere are additional limitations in our study. We did not perform pre-hoc power analysis\nto determine the number of CXR and test radiologists required to assess the performance of\nthe DL algorithm. However, the number of CXR included in our study was higher than those\nused in prior studies and was found to be adequate for assessing the DL algorithm on post-\nhoc analysis. Another limitation of our st"
+  },
+  {
+    "chunk_id": 67,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "nd to be adequate for assessing the DL algorithm on post-\nhoc analysis. Another limitation of our study pertains to the combined evaluation of different\ntypes of pulmonary opacities rather than separate categories reported in prior studies [17, 20,\n21]. Non-inclusion of specific CXR findings in the DL algorithm like the position of lines and\nDL and chest radiograph\nPLOS ONE | https://doi.org/10.1371/journal.pone.0204155\nOctober 4, 2018\n10 / 12\n\ntubes, pneumothorax, pulmonary nodules, masses, and"
+  },
+  {
+    "chunk_id": 68,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "71/journal.pone.0204155\nOctober 4, 2018\n10 / 12\n\ntubes, pneumothorax, pulmonary nodules, masses, and fibrosis, was not possible as the algo-\nrithm was not specially trained for those findings. Although the DL algorithm provided predic-\ntion statistics in percentage likelihood of findings on a continuous scale (values between 0 to\n1), we relied on the binary scores (that is, finding absent for prediction percentage < 0.5 and\nfinding present for prediction percentage \u0015 0.5) as recommended by the v"
+  },
+  {
+    "chunk_id": 69,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "iction percentage < 0.5 and\nfinding present for prediction percentage \u0015 0.5) as recommended by the vendor. It is possible\nthat specificity and accuracy of DL findings may have been different with the use of cut-off val-\nues other than 0.5. There are however no published guidelines on the most appropriate cut-off\nvalues for DL algorithm and how such deviations would affect the performance of DL.\nConclusions\nIn conclusion, a DL algorithm can aid in interpretation of CXR findings such as pulmonary\n"
+  },
+  {
+    "chunk_id": 70,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "nclusions\nIn conclusion, a DL algorithm can aid in interpretation of CXR findings such as pulmonary\nopacities, hilar prominence, cardiomegaly and pleural effusion. It can also help in assessing\nchange or stability of these findings on follow-up CXR. Though helpful in improving the\naccuracy of interpretation, the assessed DL algorithm is unlikely to replace radiologists due\nto limitations associated with the categorization of findings (such as pulmonary opacities)\nand lack of interpretation for s"
+  },
+  {
+    "chunk_id": 71,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "d with the categorization of findings (such as pulmonary opacities)\nand lack of interpretation for specific findings (such as lines and tubes, pneumothorax, fibro-\nsis, pulmonary nodules, and masses). However, DL algorithm can expedite image interpreta-\ntion in emergent situations where a trained radiologist is either unavailable or overburdened\nin busy clinical practices. It may also serve as a second reader for radiologists to improve\ntheir accuracy.\nAuthor Contributions\nConceptualization: Man"
+  },
+  {
+    "chunk_id": 72,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "econd reader for radiologists to improve\ntheir accuracy.\nAuthor Contributions\nConceptualization: Mannudeep K. Kalra.\nData curation: Ramandeep Singh, Mannudeep K. Kalra, Fatemeh Homayounieh.\nFormal analysis: Ramandeep Singh, Mannudeep K. Kalra, Fatemeh Homayounieh, Atul\nPadole.\nInvestigation: Ramandeep Singh, Mannudeep K. Kalra, Chayanin Nitiwarangkul, John A.\nPatti, Fatemeh Homayounieh, Victorine V. Muse, Amita Sharma, Subba R. Digumarthy.\nMethodology: Ramandeep Singh, Mannudeep K. Kalra, Chayan"
+  },
+  {
+    "chunk_id": 73,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "V. Muse, Amita Sharma, Subba R. Digumarthy.\nMethodology: Ramandeep Singh, Mannudeep K. Kalra, Chayanin Nitiwarangkul, John A.\nPatti, Amita Sharma, Subba R. Digumarthy.\nProject administration: Mannudeep K. Kalra.\nSoftware: Pooja Rao, Preetham Putha.\nSupervision: Mannudeep K. Kalra, Amita Sharma, Subba R. Digumarthy.\nValidation: Ramandeep Singh, Mannudeep K. Kalra, Atul Padole, Victorine V. Muse, Subba\nR. Digumarthy.\nVisualization: Mannudeep K. Kalra, Subba R. Digumarthy.\nWriting \u00ef\u00bf\u2030\noriginal draf"
+  },
+  {
+    "chunk_id": 74,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "bba\nR. Digumarthy.\nVisualization: Mannudeep K. Kalra, Subba R. Digumarthy.\nWriting \u00ef\u00bf\u2030\noriginal draft: Ramandeep Singh, Mannudeep K. Kalra.\nWriting \u00ef\u00bf\u2030\nreview & editing: Mannudeep K. Kalra, Subba R. Digumarthy.\nReferences\n1.\nhttp://www.prweb.com/releases/2011/2/prweb8127064.htDL. Accessed on May 21, 2018\n2.\nForrest JV, Friedman PJ. Radiologic errors in patients with lung cancer. West J Med. 1981; 134:485\u00ef\u00bf\u2030\n490. PMID: 7257363\nDL and chest radiograph\nPLOS ONE | https://doi.org/10.1371/journal.pon"
+  },
+  {
+    "chunk_id": 75,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "134:485\u00ef\u00bf\u2030\n490. PMID: 7257363\nDL and chest radiograph\nPLOS ONE | https://doi.org/10.1371/journal.pone.0204155\nOctober 4, 2018\n11 / 12\n\n3.\nQuekel LGBA, Kessels AGH, Goei R, van Engelshoven JMA. Miss rate of lung cancer on the chest\nradiograph in clinical practice. Chest. 1999; 115:720\u00ef\u00bf\u2030724.\nPMID: 10084482\n4.\nTudor GR, Finlay D, Taub N. An assessment of inter-observer agreement and accuracy when reporting\nplain radiographs. Clin Radiol. 1997; 52:235\u00ef\u00bf\u2030238.\nPMID: 9091261\n5.\nMelendez J, Sa\u00ef\u00bf\u2030\nnchez"
+  },
+  {
+    "chunk_id": 76,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "porting\nplain radiographs. Clin Radiol. 1997; 52:235\u00ef\u00bf\u2030238.\nPMID: 9091261\n5.\nMelendez J, Sa\u00ef\u00bf\u2030\nnchez CI, Philipsen RH, Maduskar P, Dawson R, Theron G, et al. An automated tuber-\nculosis screening strategy combining X-ray-based computer-aided detection and clinical information.\nSci Rep 2016; 6:252\u00ef\u00bf\u20306\n5.\n6.\nHoog AH, Meme HK, van Deutekom H, Mithika AM, Olunga C, Onyino F, et al. High sensitivity of chest\nradiograph reading by clinical officers in a tuberculosis prevalence survey. Int J Tuberc Lun"
+  },
+  {
+    "chunk_id": 77,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": " chest\nradiograph reading by clinical officers in a tuberculosis prevalence survey. Int J Tuberc Lung Dis 2011;\n15(10):1308\u00ef\u00bf\u203014.\nhttps://doi.org/10.5588/ijtld.11.0004 PMID: 22283886\n7.\nPande T, Cohen C, Pai M, Ahmad Khan F. Computer-aided detection of pulmonary tuberculosis on digi-\ntal chest radiographs: a systematic review. Int J Tuberc Lung Dis 2016; 20(9):1226\u00ef\u00bf\u203030.\nhttps://doi.org/\n10.5588/ijtld.15.0926 PMID: 27510250\n8.\nMaduskar P, Muyoyeta M, Ayles H, Hogeweg L, Peters-Bax L, van Ginneke"
+  },
+  {
+    "chunk_id": 78,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "jtld.15.0926 PMID: 27510250\n8.\nMaduskar P, Muyoyeta M, Ayles H, Hogeweg L, Peters-Bax L, van Ginneken B. Detection of tuberculo-\nsis using digital chest radiography: automated reading vs. interpretation by clinical officers. Int J Tuberc\nLung Dis 2013; 17(12):1613\u00ef\u00bf\u203020.\nhttps://doi.org/10.5588/ijtld.13.0325 PMID: 24200278\n9.\nJaeger S, Karargyris A, Candemir S, Folio L, Siegelman J, Callaghan F, et al. Automatic tuberculosis\nscreening using chest radiographs. IEEE Trans Med Imaging. 2014 Feb; 33("
+  },
+  {
+    "chunk_id": 79,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": " al. Automatic tuberculosis\nscreening using chest radiographs. IEEE Trans Med Imaging. 2014 Feb; 33(2):233\u00ef\u00bf\u2030\n45. https://doi.org/\n10.1109/TMI.2013.2284099 PMID: 24108713\n10.\nHwang S, Kim HE, Jeong J, Kim HJ. A novel approach for tuberculosis screening based on deep convo-\nlutional neural networks. In: Tourassi GD, Armato SG, eds. Proceedings of SPIE: medical imaging 2016\n\u00ef\u00bf\u2030title.Vol 9785. Bellingham, Wash: International Society for Optics and Photonics, 2016; 97852W.\n11.\nLakhani P, Sundaram B."
+  },
+  {
+    "chunk_id": 80,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "gham, Wash: International Society for Optics and Photonics, 2016; 97852W.\n11.\nLakhani P, Sundaram B. Deep Learning at Chest Radiography: Automated Classification of Pulmonary\nTuberculosis by Using Convolutional Neural Networks Radiology 2017; 2:574\u00ef\u00bf\u20308\n2.\n12.\nLee MZ, Cai W, Song Y, Selvadurai, Feng. Fully automated scoring of chest radiographs in cystic fibro-\nsis. Engineering in Medicine and Biology Society (EMBC), 35th Annual International Conference of the\nIEEE 2013:3965\u00ef\u00bf\u20308.\n13.\nShwachman H,"
+  },
+  {
+    "chunk_id": 81,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "ogy Society (EMBC), 35th Annual International Conference of the\nIEEE 2013:3965\u00ef\u00bf\u20308.\n13.\nShwachman H, Kulczycki LL. Long-term study of one hundred five patients with cystic fibrosis. Am J.\nDis. Child. 1958; 7:6\u00ef\u00bf\u203015.\n14.\nZhu B, Luo W, Li B, Chen B, Yang Q, Xu Y, et al. The development and evaluation of a computerized\ndiagnosis scheme for pneumoconiosis on digital chest radiographs. BioMedical Engineering OnLine.\n2014; 13:141. https://doi.org/10.1186/1475-925X-13-141 PMID: 25277489\n15.\nYu P, Xu H,"
+  },
+  {
+    "chunk_id": 82,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "eering OnLine.\n2014; 13:141. https://doi.org/10.1186/1475-925X-13-141 PMID: 25277489\n15.\nYu P, Xu H, Zhu Y, Yang C, Sun X, Zhao J. An automatic computer-aided detection scheme for pneu-\nmoconiosis on digital chest radiographs. J Digit Imaging. 2011; 24:382\u00ef\u00bf\u20309\n3. https://doi.org/10.1007/\ns10278-010-9276-7 PMID: 20174852\n16.\nXu H, Tao X, Sundararajan R. Proceedings of the Third International Workshop on Pulmonary Image\nAnalysis: CreateSpace Independent Publishing Platform; 2010. Computer Aided De"
+  },
+  {
+    "chunk_id": 83,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "op on Pulmonary Image\nAnalysis: CreateSpace Independent Publishing Platform; 2010. Computer Aided Detection for Pneumo-\nconiosis Screening on Digital Chest Radiographs 2010; 9:129\u00ef\u00bf\u20303\n8.\n17.\nWang X, Peng Y, Lu L, Lu Z, Bagheri M, Summers RM. ChestX-ray8: Hospital-scale Chest X-ray Data-\nbase and Benchmarks on Weakly-Supervised Classification and Localization of Common Thorax Dis-\neases. IEEE CVPR 2017.\n18.\nHuang G, Zhuang Liu, Van der Maaten L, Weinberger KQ. Densely Connected Convolutional Netw"
+  },
+  {
+    "chunk_id": 84,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "2017.\n18.\nHuang G, Zhuang Liu, Van der Maaten L, Weinberger KQ. Densely Connected Convolutional Networks.\narXiv:1608.06993.\n19.\nHe K, Zhang X, Ren S, Sun J. Deep Residual Learning for Image Recognition. arXiv:1512.03385.\n20.\nYao L, Poblenz E, Dagunts D, Covington B, Bernard D, Lyman K. Learning to diagnose from scratch by\nexploiting dependencies among labels. arXiv preprint arXiv:1710.10501, 2017.\n21.\nRajpurkar P, Irvin J, Zhu K, Yang B, Mehta H, Duan T, et al. CheXNet: Radiologist-level pneumon"
+  },
+  {
+    "chunk_id": 85,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "\n21.\nRajpurkar P, Irvin J, Zhu K, Yang B, Mehta H, Duan T, et al. CheXNet: Radiologist-level pneumonia\ndetection on chest X-rays with deep learning. https://arxiv.org/abs/1711.05225, 2017.\n22.\nBecker AS, Blu\u00ef\u00bf\u2030\nthgen C, Phi van VD, Sekaggya-Wiltshire C, Castelnuovo B, Kambugu A, et al. Detec-\ntion of tuberculosis patterns in digital photographs of chest X-ray images using Deep Learning: feasibil-\nity study. Int J Tuberc Lung Dis. 2018; 22(3):328\u00ef\u00bf\u2030\n35. https://doi.org/10.5588/ijtld.17.0520 PMID:"
+  },
+  {
+    "chunk_id": 86,
+    "filename": "paper05_deep_learning_chest_radiography.pdf",
+    "text": "ity study. Int J Tuberc Lung Dis. 2018; 22(3):328\u00ef\u00bf\u2030\n35. https://doi.org/10.5588/ijtld.17.0520 PMID:\n29471912\nDL and chest radiograph\nPLOS ONE | https://doi.org/10.1371/journal.pone.0204155\nOctober 4, 2018\n12 / 12\n\n"
+  }
+]

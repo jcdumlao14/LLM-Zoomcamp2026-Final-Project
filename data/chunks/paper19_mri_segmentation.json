@@ -1,0 +1,507 @@
+[
+  {
+    "chunk_id": 0,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "Automated Magnetic Resonance Image Segmentation of the \nAnterior Cruciate Ligament\nSean W. Flannery1,2, Ata M. Kiapour3, David J. Edgar1,2, Martha M. Murray3, Braden C. \nFleming1,2\n1Center for Biomedical Engineering, Brown University, Providence, RI\n2Department of Orthopaedics, Warren Alpert Medical School of Brown University/Rhode Island \nHospital, Providence, RI\n3Department of Orthopaedic Surgery, Boston Children\u2019s Hospital, Harvard Medical School, \nBoston, MA\nAbstract\nThe objective of this wo"
+  },
+  {
+    "chunk_id": 1,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "y, Boston Children\u2019s Hospital, Harvard Medical School, \nBoston, MA\nAbstract\nThe objective of this work was to develop an automated segmentation method for the anterior \ncruciate ligament that is capable of facilitating quantitative assessments of ligament in clinical and \nresearch settings. A modified U-Net fully convolutional network model was trained, validated, and \ntested on 246 Constructive Interference in Steady State magnetic resonance images of intact \nanterior cruciate ligaments. Overal"
+  },
+  {
+    "chunk_id": 2,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "nterference in Steady State magnetic resonance images of intact \nanterior cruciate ligaments. Overall model performance was assessed on the image set relative to \nan experienced (>5 years) \u201cground truth\u201d segmenter in two domains: anatomical similarity and the \naccuracy of quantitative measurements (i.e. signal intensity and volume) obtained from the \nautomated segmentation. To establish model reliability relative to manual segmentation, a subset \nof the imaging data was re-segmented by the groun"
+  },
+  {
+    "chunk_id": 3,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "ability relative to manual segmentation, a subset \nof the imaging data was re-segmented by the ground truth segmenter and two additional \nsegmenters (A: 6 months, B: 2 years of experience), with their performance evaluated relative to \nthe ground truth. The final model scored well on anatomical performance metrics (Dice \ncoefficient=.84, precision=.82, sensitivity=.85). The median signal intensities and volumes of the \nautomated segmentations were not significantly different from ground truth (0"
+  },
+  {
+    "chunk_id": 4,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "es and volumes of the \nautomated segmentations were not significantly different from ground truth (0.3% difference, \np=.9; 2.3% difference, p=.08, respectively). When the model results were compared to the \nindependent segmenters, the model predictions demonstrated greater median Dice coefficient \n(A=.73, p=.001; B=.77, p=NS) and sensitivity (A=.68, p=.001; B=.72, p=.003). The model \nperformed equivalently well to re-test segmentation by the ground truth segmenter on all \nmeasures. The quantitat"
+  },
+  {
+    "chunk_id": 5,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "ivalently well to re-test segmentation by the ground truth segmenter on all \nmeasures. The quantitative measures extracted from the automated segmentation model did not \ndiffer from those of manual segmentation, enabling their use in quantitative MRI pipelines to \nevaluate the anterior cruciate ligament.\nCorresponding Author: Braden C. Fleming, Bioengineering Labs, Dept of Orthopaedics, Coro West, Suite 402, 1 Hoppin St, \nProvidence RI 20903; braden_fleming@brown.edu, Phone: 401-316-4737.\nAuthor"
+  },
+  {
+    "chunk_id": 6,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": " Suite 402, 1 Hoppin St, \nProvidence RI 20903; braden_fleming@brown.edu, Phone: 401-316-4737.\nAuthor Contribution Statement:\nSean Flannery trained and evaluated the deep learning model, and performed image segmentations for the manual segmentation \ncomparison task. Ata Kiapour performed ground truth image segmentation and re-test segmentation. David Edgar performed image \nsegmentations for the manual segmentation task. Martha Murray acquired and provided the data used in this manuscript. Braden "
+  },
+  {
+    "chunk_id": 7,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "ual segmentation task. Martha Murray acquired and provided the data used in this manuscript. Braden \nFleming provided significant input on the research design and interpretation of the data. All authors made significant contributions in \nthe drafting of this manuscript.\nHHS Public Access\nAuthor manuscript\nJ Orthop Res. Author manuscript; available in PMC 2022 April 01.\nPublished in final edited form as:\nJ Orthop Res. 2021 April ; 39(4): 831\u2013840. doi:10.1002/jor.24926.\nAuthor Manuscript\nAuthor Ma"
+  },
+  {
+    "chunk_id": 8,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "rm as:\nJ Orthop Res. 2021 April ; 39(4): 831\u2013840. doi:10.1002/jor.24926.\nAuthor Manuscript\nAuthor Manuscript\nAuthor Manuscript\nAuthor Manuscript\n\nKeywords\ndeep learning; automated segmentation; anterior cruciate ligament; knee; magnetic resonance \nimaging\nINTRODUCTION\nQuantitative magnetic resonance imaging (qMRI) sequences, such as T2* relaxometry,1\u20134 \nultra-short echo time T2* relaxometry,5\u20138 and T1\u03c19\u201311 are increasingly common tools in \northopaedic research. These techniques allow for noninva"
+  },
+  {
+    "chunk_id": 9,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "d T1\u03c19\u201311 are increasingly common tools in \northopaedic research. These techniques allow for noninvasive, objective evaluations of the \nintegrity of soft tissue structures, including the anterior cruciate ligament (ACL). T2* \nrelaxometry may be used to objectively measure soft tissue structural properties,3; 4; 12 to \nevaluate tissue degeneration,1; 6; 8; 13 to provide insight into risk factors for graft reinjury,\n3; 12; 14 and long-term posttraumatic osteoarthritis risk.2; 7; 8; 15\nHowever, in "
+  },
+  {
+    "chunk_id": 10,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "r graft reinjury,\n3; 12; 14 and long-term posttraumatic osteoarthritis risk.2; 7; 8; 15\nHowever, in order to obtain quantitative maps of a tissue, manual image segmentation is \ntypically required, during which an individual must move slice-by-slice through the MR \nimage stack, while selecting voxels that belong to the tissue(s) of interest. Gaining \nproficiency in the manual segmentation task requires a lengthy training process, and remains \ntime consuming even for experienced segmenters. Furthe"
+  },
+  {
+    "chunk_id": 11,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "ires a lengthy training process, and remains \ntime consuming even for experienced segmenters. Furthermore, a degree of inter-segmenter \nand intra-segmenter (re-test) variability is inherent to the manual segmentation task.\nTo circumvent this bottleneck in the qMRI data processing pipeline, significant effort has \nbeen placed into developing automated segmentation methods, especially for joint tissues \nsuch as cartilage and meniscus.16\u201320 Unfortunately, the ACL has proven to be difficult to \nsegm"
+  },
+  {
+    "chunk_id": 12,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "ues \nsuch as cartilage and meniscus.16\u201320 Unfortunately, the ACL has proven to be difficult to \nsegment automatically due to several challenges, including poor contrast and indistinct \ntissue boundaries relative to background tissue. Perhaps as a result, literature on automatic \nACL segmentation is scarce.\nA couple methods for semiautomatic ACL segmentation have been published that \ndemonstrate feasibility. Ho et al. utilized pre-defined bone and cropping masks in \nconjunction with active contou"
+  },
+  {
+    "chunk_id": 13,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "asibility. Ho et al. utilized pre-defined bone and cropping masks in \nconjunction with active contour.21 Lee et al. performed segmentation using a graph cut \ntechnique augmented by cost terms that constrain segmentation shape in a patient-specific \nmanner, obtaining minor improvements in segmentation performance.22 Both models \nperformed well on the mid-substance of the ACL but struggled with classification around the \norigin and insertion. This difficulty has thus far precluded fully automatic "
+  },
+  {
+    "chunk_id": 14,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "sification around the \norigin and insertion. This difficulty has thus far precluded fully automatic segmentation of \nthe ACL.\nWe aimed to address the challenges associated with automatic ACL segmentation through \nthe application of deep learning. Deep learning excels at inferring complex relationships \nfrom large datasets with minimal constraints imposed by the creator. Deep learning has been \nsuccessfully used for brain image segmentation,23\u201326 which presents similar contrast and \ntissue bounda"
+  },
+  {
+    "chunk_id": 15,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "cessfully used for brain image segmentation,23\u201326 which presents similar contrast and \ntissue boundary difficulties to the ACL. These methods have also been successful in \ncartilage and meniscus segmentation.17; 18\nFlannery et al.\nPage 2\nJ Orthop Res. Author manuscript; available in PMC 2022 April 01.\nAuthor Manuscript\nAuthor Manuscript\nAuthor Manuscript\nAuthor Manuscript\n\nThe goal of the present work was to develop a reliable automated segmentation method for \nthe ACL, that could replace manual"
+  },
+  {
+    "chunk_id": 16,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "work was to develop a reliable automated segmentation method for \nthe ACL, that could replace manual segmentation in qMRI processing pipelines. A 2D U-\nNet27 architecture was chosen for this task, due to its previous success in MR image \nsegmentation, particularly on other knee structures such as cartilage and meniscus.17; 18 The \nConstructive Interference in Steady State (CISS) sequence was selected to develop the \nautomatic segmentation method as it offers relatively high spatial resolution an"
+  },
+  {
+    "chunk_id": 17,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "ted to develop the \nautomatic segmentation method as it offers relatively high spatial resolution and contrast to \nenable the algorithm to gain proficiency at the ACL segmentation task. The CISS sequence \nhas been used in clinical trials of ACL healing,28; 29 and has been shown to correlate with \nthe biomechanical properties of healing ACLs and ACL grafts.14 Therefore, an automated \nsegmentation algorithm for CISS sequences that is anatomically accurate and yields \nquantitative measures similar "
+  },
+  {
+    "chunk_id": 18,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "lgorithm for CISS sequences that is anatomically accurate and yields \nquantitative measures similar to manual segmentation could immediately facilitate the use of \nqMRI biomechanical property prediction models.\nTo evaluate the performance of the automated segmentation model, we hypothesized that: a) \na fully convolutional neural network could achieve segmentation accuracy comparable to \nmanual segmentation in terms of anatomical similarity and quantitative feature similarity \n(i.e. signal intens"
+  },
+  {
+    "chunk_id": 19,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "mentation in terms of anatomical similarity and quantitative feature similarity \n(i.e. signal intensity and volume), and b) that this deep learning approach would be more \nreproducible than manual segmentation.\nMETHODS\nData\nMR imaging data were acquired from patients participating in the \u201cBridge Enhanced ACL \nRepair (BEAR) I\u201d (NCT02292004; IRB-P00012985; mean age 24.1 \u00b1 4.9 years, 40% male) \nand \u201cBEAR II\u201d (NCT02664545; IRB-P00021470; mean age 19.4 \u00b1 5.1 years, 42% male) \nclinical trials evaluati"
+  },
+  {
+    "chunk_id": 20,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "BEAR II\u201d (NCT02664545; IRB-P00021470; mean age 19.4 \u00b1 5.1 years, 42% male) \nclinical trials evaluating a new ACL repair procedure.28\u201330 MR scans of the contralateral \nintact ACL were obtained at one timepoint for the BEAR I (24 months post-surgery) and at \nup to three timepoints for the BEAR II (6, 12, and 24 months post-surgery) patients. After \naccounting for patients lost to follow up and removing patients with prior or subsequent \ncontralateral ACL tears, a total of 246 sagittal CISS scans ("
+  },
+  {
+    "chunk_id": 21,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "ing patients with prior or subsequent \ncontralateral ACL tears, a total of 246 sagittal CISS scans (FA=35\u00b0; TR=12.78ms; \nTE=6.39ms; FOV=140mm; 384x384 acquisition matrix with voxel size 0.365mm x \n0.365mm x 1.5mm) of intact ACLs were included in the combined dataset. All MR images \nwere acquired on a 3T TRIO (Siemens; Erlangen, Germany) with a 15-channel transmit/\nreceive knee coil (Siemens). Data were randomly divided into training (~70%; n=171), \nvalidation (~20%; n=46), and test (~10%; n=29) "
+  },
+  {
+    "chunk_id": 22,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": " were randomly divided into training (~70%; n=171), \nvalidation (~20%; n=46), and test (~10%; n=29) sets. This split was stratified by subject to \nensure that the model would not learn and make predictions on MR images from the same \nsubject.\nPreprocessing\nMR image volumes were automatically cropped to 256x256x20 such that only the center of \nthe imaging volume was retained, which included the ACL. The 20-slice increment for \nautomatic cropping was a conservative estimate to ensure that the ACL "
+  },
+  {
+    "chunk_id": 23,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": ". The 20-slice increment for \nautomatic cropping was a conservative estimate to ensure that the ACL was not cropped, and \nthis was visually confirmed prior to model training. Next, the signal intensities of MR image \nvolumes were standardized by z-scoring on a per subject basis. Ground truth image \nsegmentations were created in Mimics (Mimics Research 19.0, Materialise) by a single \nFlannery et al.\nPage 3\nJ Orthop Res. Author manuscript; available in PMC 2022 April 01.\nAuthor Manuscript\nAuthor M"
+  },
+  {
+    "chunk_id": 24,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": ".\nPage 3\nJ Orthop Res. Author manuscript; available in PMC 2022 April 01.\nAuthor Manuscript\nAuthor Manuscript\nAuthor Manuscript\nAuthor Manuscript\n\nsegmenter with greater than 5 years of experience segmenting ACLs and ACL grafts. The \nmodel \u201clearns\u201d and evaluates its performance relative to these manual ground truth \nsegmentations.\nModel\nA modified 2D U-Net was coded using TensorFlow 2.1.031 and the Keras API.32 The U-Net \narchitecture consists of two main segments, which are symmetrical. First, "
+  },
+  {
+    "chunk_id": 25,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "e Keras API.32 The U-Net \narchitecture consists of two main segments, which are symmetrical. First, the contracting \npath down samples the images in a series of blocks consisting of two convolutional layers \n(kernel size tuned as a hyperparameter), a 2x2 max pooling layer with stride 2, and a dropout \nlayer. Batch normalization was applied prior to rectified linear unit (ReLU) activation. Next, \nthe expansive path up samples the images in a series of nearly symmetric blocks that \nsubstitute pool"
+  },
+  {
+    "chunk_id": 26,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "he expansive path up samples the images in a series of nearly symmetric blocks that \nsubstitute pooling operators for up sampling operators and exclude the dropout layer. Skip \nconnections bridge the contracting and expansive paths at layers of equivalent resolution. A \nfinal 1x1 convolutional layer with sigmoid activation is applied to generate the final output \nprobability matrix. The combination of these two paths merges information regarding high \nlevel features of an image with more granula"
+  },
+  {
+    "chunk_id": 27,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "n of these two paths merges information regarding high \nlevel features of an image with more granular local details to yield a final segmented image \n(Figure 1).\nBayesian optimization was employed for hyperparameter tuning, which uses an acquisition \nfunction (a Gaussian process) to determine where to search the hyperparameter space next in \neach iteration. This method is less computationally expensive than grid search, and by \nsystematically incorporating knowledge of previous hyperparameter co"
+  },
+  {
+    "chunk_id": 28,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "nsive than grid search, and by \nsystematically incorporating knowledge of previous hyperparameter configurations into the \nsearch process, it often converges on an optimal solution more rapidly than random search.33\nThe following hyperparameters were tuned with Bayesian optimization: filter sizes, kernel \nsize, alpha (i.e. ReLU leakiness), dropout probability, and learning rate. Additionally, model \ndepth, batch size, and use of batch normalization or local response normalization were tuned \nby "
+  },
+  {
+    "chunk_id": 29,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "l \ndepth, batch size, and use of batch normalization or local response normalization were tuned \nby manual search. A summary of the hyperparameter search space can be found in Table 1. \nEach MR image slice was treated as a single sample. Training samples were randomly \nshuffled, which improved training time without affecting performance. Model training was \nterminated if validation loss plateaued for 10 epochs to prevent overfitting and to reduce \ntraining time.\nThe model was trained on a Dell P"
+  },
+  {
+    "chunk_id": 30,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "for 10 epochs to prevent overfitting and to reduce \ntraining time.\nThe model was trained on a Dell Precision 3630 desktop (Dell Inc.; Round Rock, TX, USA) \noutfitted with an NVIDIA GeForce GTX 1080 GPU (NVIDIA Corporation; Santa Clara, \nCA, USA). Dice coefficient with Laplacian smoothing loss (Eq. 1) was used to address the \nclass imbalance between the ratio of ACL to non-ACL voxels. The addition of a Laplacian \nsmoothing coefficient of 1 in the numerator and denominator is necessary for the Dic"
+  },
+  {
+    "chunk_id": 31,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "of a Laplacian \nsmoothing coefficient of 1 in the numerator and denominator is necessary for the Dice \ncoefficient loss to be continuously differentiable. A negative sign is also required as loss \nmust be minimized but Dice coefficient maximized. Adaptive moment estimation (Adam)34 \nwas used as an optimizer during model training.\nDice coefficientLOSS = \u22122 \u2223ytrue\u22c2ypred \u2223+ 1\n\u2223ytrue \u2223+ \u2223ypred \u2223+ 1\n[1]\nFlannery et al.\nPage 4\nJ Orthop Res. Author manuscript; available in PMC 2022 April 01.\nAuthor Man"
+  },
+  {
+    "chunk_id": 32,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "]\nFlannery et al.\nPage 4\nJ Orthop Res. Author manuscript; available in PMC 2022 April 01.\nAuthor Manuscript\nAuthor Manuscript\nAuthor Manuscript\nAuthor Manuscript\n\nTest set probability outputs were thresholded for binary predictions. Probabilities greater \nthan 0.5 were classified as ACL, and less than or equal to 0.5 as non-ACL. Test set slice \npredictions were merged by subject for final performance metric calculations.\nPerformance\nThe anatomical similarity of automatic segmentation relative to"
+  },
+  {
+    "chunk_id": 33,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "nce metric calculations.\nPerformance\nThe anatomical similarity of automatic segmentation relative to manual ground truth was \nassessed with Dice coefficient (Eq. 2), sensitivity (Eq. 3), and precision (Eq. 4). Dice \ncoefficient measures the degree of similarity between the automatic and manual (ground \ntruth) segmentations (TP = true positive, FP = false positive, FN = false negative). \nSensitivity is the fraction of true positives that were correctly classified. Precision is the \nfraction of tr"
+  },
+  {
+    "chunk_id": 34,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "y is the fraction of true positives that were correctly classified. Precision is the \nfraction of true positives out of all positive classifications. Greater Dice coefficient, \nsensitivity, and precision values indicate better segmentation performance relative to ground \ntruth.\nDice coefficient =\n2TP\nFP + 2TP + FN\n[2]\nSensitivity =\nTP\nTP + FN\n[3]\nPrecision =\nTP\nTP + FP\n[4]\nFor any automatic segmentation method to be effective for use in qMRI pipelines, \nquantitative features extracted from the a"
+  },
+  {
+    "chunk_id": 35,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "tation method to be effective for use in qMRI pipelines, \nquantitative features extracted from the automatic segmentations must be equivalent to those \nextracted from manual segmentation. Therefore, the median standardized signal intensity \nand ligament volume of the automated test set segmentations were assessed relative to the \nground truth segmenter. Statistical significance of disagreements between the automated \nsegmentation and ground truth were assessed using Wilcoxon signed rank tests (a"
+  },
+  {
+    "chunk_id": 36,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "tween the automated \nsegmentation and ground truth were assessed using Wilcoxon signed rank tests (alpha=.05).\nTo assess the reproducibility of anatomical segmentation and subsequent quantitative \nmeasures, a randomly selected and anonymized subset of 10 test set MR imaging scans was \nsegmented by two more segmenters, one with 6 months of experience and another with 2 \nyears of experience segmenting ACLs. The ground truth segmenter also re-segmented this \nsubset to evaluate re-test performance. "
+  },
+  {
+    "chunk_id": 37,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "ng ACLs. The ground truth segmenter also re-segmented this \nsubset to evaluate re-test performance. Re-segmentations of the ground truth segmenter were \ncompleted on average 2.2 years after the initial segmentation. Anatomical similarity relative \nto ground truth was again evaluated by Dice coefficient, sensitivity, and precision. Median \nstandardized signal intensity and volume of the ACL were calculated for each segmentation. \nRepeated measures analysis of variance (RANOVA) with pairwise Tukey"
+  },
+  {
+    "chunk_id": 38,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "lculated for each segmentation. \nRepeated measures analysis of variance (RANOVA) with pairwise Tukey Honest Significant \nDifference testing were used to assess the significance of differences on this subset \n(alpha=.05). All statistical analyses were performed in Python with the SciPy35 and \nstatsmodels36 packages.\nFlannery et al.\nPage 5\nJ Orthop Res. Author manuscript; available in PMC 2022 April 01.\nAuthor Manuscript\nAuthor Manuscript\nAuthor Manuscript\nAuthor Manuscript\n\nRESULTS\nThe optimized "
+  },
+  {
+    "chunk_id": 39,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": " 01.\nAuthor Manuscript\nAuthor Manuscript\nAuthor Manuscript\nAuthor Manuscript\n\nRESULTS\nThe optimized model utilized a deep architecture, with small batch size, medium kernel size, \nlarger filter sizes, batch normalization, standard ReLU activation (i.e. alpha=0), high dropout \nprobability in the downwards path, and a variable learning rate conditioned on validation \nloss (Table 2). The test set segmentation predictions of the final model configuration were \nanatomically similar to the ground trut"
+  },
+  {
+    "chunk_id": 40,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "mentation predictions of the final model configuration were \nanatomically similar to the ground truth, with per subject median Dice coefficient=.84, \nprecision=.82, and sensitivity=.85 (Figure 2). Examples of raw MR images with \ncorresponding ground truth manual segmentation and predicted automatic segmentation are \nshown in Figure 3. Qualitatively, some regions of disagreement were observed around the \norigin and insertion in some subjects (Figure 4). The typical mode of disagreement was the \nm"
+  },
+  {
+    "chunk_id": 41,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "d the \norigin and insertion in some subjects (Figure 4). The typical mode of disagreement was the \nmodel leaving a slice unsegmented, where the ground truth segmenter did not. However, \nthese regions were small relative to the total ligament.\nPaired comparisons of median standardized signal intensity and volume showed differences \nof 0.3% (p=.9) and 2.3% (p=.08), respectively, between ground truth and the final model \n(Figure 5). Neither of these differences were statistically significant.\nOn th"
+  },
+  {
+    "chunk_id": 42,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": " and the final model \n(Figure 5). Neither of these differences were statistically significant.\nOn the random subset of test subjects, the deep learning model outperformed two additional \nmanual segmenters relative to the ground truth segmenter in terms of Dice coefficient and \nsensitivity (Figure 6). However, the increase in Dice coefficient was only significantly \ndifferent relative to Segmenter A (p=.001). The model performed as well as the manual \nsegmenters with respect to precision. The mod"
+  },
+  {
+    "chunk_id": 43,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "A (p=.001). The model performed as well as the manual \nsegmenters with respect to precision. The model scored significantly higher on sensitivity \nthan either manual segmenter (p=.001, p=.003). The model performed equally well to re-\nsegmentation by the ground truth segmenter on all performance measures, when there was a \n2.2 year interval between the original and re-test manual segmentations. The sensitivity of \nthe model was greater than re-segmentation by the ground truth segmenter, though th"
+  },
+  {
+    "chunk_id": 44,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": " sensitivity of \nthe model was greater than re-segmentation by the ground truth segmenter, though this \nfinding was not a significant difference.\nMedian standardized signal intensities were not significantly different across segmenters, \nwith the exception of segmenter A, where the signal intensity was increased (Figure 7). \nHowever, no significant difference was detected. There were greater disagreements in \nvolume between segmenters relative to ground truth than between automatic segmentation "
+  },
+  {
+    "chunk_id": 45,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "reements in \nvolume between segmenters relative to ground truth than between automatic segmentation \nand ground truth. All manual segmentions, including the re-test segmentations of the ground \ntruth segmenter, reported lower ligament volumes than the ground truth. The predicted \nsegmentations of the model on this subset were larger in volume than the ground truth. Once \nagain, these differences were not found to be significantly different.\nDISCUSSION\nThe goal of the current study was to validat"
+  },
+  {
+    "chunk_id": 46,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "ere not found to be significantly different.\nDISCUSSION\nThe goal of the current study was to validate an automated segmentation method for the \nACL, that could replace manual segmentation in qMRI processing pipelines. We \nhypothesized that: a) a fully convolutional neural network could generate segmentations \nsimilar to manual segmentation both anatomically and on the basis of quantitative features \n(i.e. signal intensity and volume), and b) that the proposed deep learning model would be \nmore r"
+  },
+  {
+    "chunk_id": 47,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "s \n(i.e. signal intensity and volume), and b) that the proposed deep learning model would be \nmore reproducible than manual segmentation. Although there are many quantitative features \nFlannery et al.\nPage 6\nJ Orthop Res. Author manuscript; available in PMC 2022 April 01.\nAuthor Manuscript\nAuthor Manuscript\nAuthor Manuscript\nAuthor Manuscript\n\nof interest that may be measured after segmentation, including cross-sectional area, ligament \nlength, and orientation (data presented in Appendix 2), for"
+  },
+  {
+    "chunk_id": 48,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "ncluding cross-sectional area, ligament \nlength, and orientation (data presented in Appendix 2), for the current study signal intensity \nand volume of the ACL were the focus because they are currently used in downstream qMRI \nprediction models, such as for ACL failure load.14\nOn the full image test set, the automatic segmentation model scored highly on anatomical \nperformance metrics. Furthermore, on a randomly selected subset of test subjects, the \nmodel\u2019s predicted segmentations demonstrated g"
+  },
+  {
+    "chunk_id": 49,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": " on a randomly selected subset of test subjects, the \nmodel\u2019s predicted segmentations demonstrated greater anatomical similarity to ground truth \nthan two manual segmenters in terms of Dice coefficient and sensitivity relative to ground \ntruth, while showing similar precision. On these performance metrics, the model performed \nas well as re-segmentation by the ground truth segmenter.\nQualitatively, we observed greater variability at the origin and insertion of the ACL, for both \nthe model and hu"
+  },
+  {
+    "chunk_id": 50,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": ", we observed greater variability at the origin and insertion of the ACL, for both \nthe model and human segmenters relative to ground truth. As previously noted, prior \nattempts to semi-automatically segment the ACL faced difficulties at the origin and \ninsertion.21; 22 However, a sub-regional analysis of the origin, insertion, and mid-substance \nonly found a statistically significant decrease in automatic segmentation performance at the \norigin. No statistically significant difference was obser"
+  },
+  {
+    "chunk_id": 51,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "automatic segmentation performance at the \norigin. No statistically significant difference was observed at the insertion, which \ndemonstrated moderately higher performance (Appendix 3).\nNevertheless, the fully automated deep learning model achieved overall greater anatomical \nagreement relative to ground truth manual segmentation than these prior semi-automatic \nmethods. Ho et al. reported a Dice coefficient of 0.38 and sensitivity of 0.43 for a semi-\nautomated method using morphological operati"
+  },
+  {
+    "chunk_id": 52,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "coefficient of 0.38 and sensitivity of 0.43 for a semi-\nautomated method using morphological operations and active contour (precision not \nreported).21 The graph cuts with patient-specific shape constraints method proposed by Lee \net al. achieved a Dice coefficient of 0.66 (sensitivity and precision not reported).22 In \ncontrast, the fully automated method proposed here achieved a Dice coefficient of 0.84, \nprecision of 0.82, and sensitivity of 0.85.\nThe deep learning model yielded very similar "
+  },
+  {
+    "chunk_id": 53,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": " of 0.84, \nprecision of 0.82, and sensitivity of 0.85.\nThe deep learning model yielded very similar median standardized signal intensity and \nvolume measurements to ground truth on the test set, without any statistically significant \ndifferences. For use in qMRI pipelines, this is especially important, as a divergence in \nquantitative measurements could skew subsequent predictions of ACL mechanical properties \nand tissue health.14\nInterestingly, in the randomized test subset, there was greater d"
+  },
+  {
+    "chunk_id": 54,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "l properties \nand tissue health.14\nInterestingly, in the randomized test subset, there was greater disagreement between \nmanually segmented ligament volumes relative to ground truth, though this difference was \nnot significant. It is likely that at least part of this disagreement is due to experience, as \nSegmenter A (6 months of experience) diverged to the greatest extent, followed by \nSegmenter B (2 years of experience). Yet, re-segmentation by the ground truth segmenter \n(greater than 5 years"
+  },
+  {
+    "chunk_id": 55,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "B (2 years of experience). Yet, re-segmentation by the ground truth segmenter \n(greater than 5 years\u2019 experience) still yielded differences in volume. These results highlight \nhow the learning curve for manual segmentation is an obstacle for scaling up qMRI \npipelines, and even then inter-segmenter or intra-segmenter variability is an inherent issue.\nIn contrast, the trained automatic segmentation model produces nearly identical \nsegmentations on the same MR image, unlike a human segmenter. This"
+  },
+  {
+    "chunk_id": 56,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": " model produces nearly identical \nsegmentations on the same MR image, unlike a human segmenter. This is because no \nupdates to the network\u2019s weights and biases occur after training. Therefore, when predicting \nFlannery et al.\nPage 7\nJ Orthop Res. Author manuscript; available in PMC 2022 April 01.\nAuthor Manuscript\nAuthor Manuscript\nAuthor Manuscript\nAuthor Manuscript\n\nsegmentation on the same MR image, the same series of operations will occur along the \nforward pass, with the only source of infi"
+  },
+  {
+    "chunk_id": 57,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "mage, the same series of operations will occur along the \nforward pass, with the only source of infinitesimal variation in such a case being machine \nerror. By eliminating inter- and intra-segmenter variability, automatic segmentation removes \na source of variation that would negatively affect downstream qMRI prediction models (e.g. \nfor ACL failure load prediction).14\nAnother advantage of the deep learning model is that it is extremely fast at automatic \nsegmentation. On the test set, mean segm"
+  },
+  {
+    "chunk_id": 58,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "p learning model is that it is extremely fast at automatic \nsegmentation. On the test set, mean segmentation time was 0.33 seconds per subject. In \ncontrast, it has been our experience that manually segmenting the ACL from a CISS scan of \nthe knee takes 1-2 hours. This major increase in efficiency overcomes another current \npreprocessing bottleneck that manual segmentation creates in MRI data pipelines.\nThe strength of this study is that it leverages a large dataset of intact ACL CISS MR scans \n"
+  },
+  {
+    "chunk_id": 59,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "lines.\nThe strength of this study is that it leverages a large dataset of intact ACL CISS MR scans \nwith relatively high spatial resolution and contrast, from a cohort of patients relevant to the \nACL-injured population. Since measures of signal intensity and volume obtained from CISS \nscans have been correlated to ACL mechanical properties,14 automatic segmentations from \nthis sequence may be immediately useful for making quantitative predictions. Furthermore, \nbecause of the high contrast in t"
+  },
+  {
+    "chunk_id": 60,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "ediately useful for making quantitative predictions. Furthermore, \nbecause of the high contrast in these scans, the CISS sequence is useful for training a model \nthat may then be transferred via transfer learning to other, lower resolution sequences such \nas T2*.3; 12 Transferring the model to other sequences is the subject of ongoing work.\nGiven the positive results of the automatic deep learning model for segmenting the ACL, \nfuture work will focus on translating this trained model to lower re"
+  },
+  {
+    "chunk_id": 61,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": " model for segmenting the ACL, \nfuture work will focus on translating this trained model to lower resolution qMRI sequences, \nas well as other MRI sequences that are routinely used for clinical assessment (e.g. PD-\nSPACE). It is unlikely that this model will work well \u201coff the shelf\u201d with other MRI \nsequences, due to differences in acquisition parameters. However, translating the current \nmodel to other sequences may be accomplished using transfer learning.37 In addition, this \nmodel was trained"
+  },
+  {
+    "chunk_id": 62,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": " other sequences may be accomplished using transfer learning.37 In addition, this \nmodel was trained on intact ligaments. To be clinically useful, this model must also robustly \nsegment ACL reconstruction grafts and repairs. This is also a task that may be accomplished \nby transfer learning, now that this validation with intact ligaments has been performed.\nIn conclusion, the proposed model segmented the ACL with greater speed and reliability \nthan manual segmentation and may be scaled up withou"
+  },
+  {
+    "chunk_id": 63,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "ted the ACL with greater speed and reliability \nthan manual segmentation and may be scaled up without the lengthy training process \nassociated with manual segmentation. This automated method may enable increased usage \nof qMRI in clinical trials for direct assessments of ligament outcomes by overcoming the \nsegmentation time and expertise bottlenecks of manual processing following ACL injury or \nACL surgery.\nSupplementary Material\nRefer to Web version on PubMed Central for supplementary material"
+  },
+  {
+    "chunk_id": 64,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "CL surgery.\nSupplementary Material\nRefer to Web version on PubMed Central for supplementary material.\nACKNOWLEDGEMENTS\nWe gratefully acknowledge the support from the National Institutes of Health [NIAMS 3R01-AR065462, NIGMS \n5P30-GM122732 (Bioengineering Core of the COBRE Centre for Skeletal Health and Repair)], the National \nFootball League Players Association (NFLPA), the Lucy Lippitt Endowment, the RIH Orthopaedic Foundation, and \nthe Boston Children\u2019s Hospital Orthopaedic Surgery Foundation."
+  },
+  {
+    "chunk_id": 65,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": " the RIH Orthopaedic Foundation, and \nthe Boston Children\u2019s Hospital Orthopaedic Surgery Foundation.\nFlannery et al.\nPage 8\nJ Orthop Res. Author manuscript; available in PMC 2022 April 01.\nAuthor Manuscript\nAuthor Manuscript\nAuthor Manuscript\nAuthor Manuscript\n\nDr. Fleming receives research support from the NIH and DoD and receives a stipend from Sage Publishing for his \nwork as an associate editor for a medical journal. Dr. Murray is an inventor on patents held by Boston Children\u2019s \nHospital re"
+  },
+  {
+    "chunk_id": 66,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "r for a medical journal. Dr. Murray is an inventor on patents held by Boston Children\u2019s \nHospital related to the scaffold that was used in the BEAR I and II trials. Dr. Murray also has an equity interests in \nMIACH Orthopaedics, a start-up company translating the scaffold for clinical use. It should be noted that the \nscaffold is not central to the work presented here as the imaging was performed on the contralateral leg. Dr. Murray \nalso holds research grants from the NIH, DoD and NFLPA through"
+  },
+  {
+    "chunk_id": 67,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "on the contralateral leg. Dr. Murray \nalso holds research grants from the NIH, DoD and NFLPA through the Football Players Health Study at Harvard \nUniversity. The Football Players Health Study is funded by a grant from the National Football League Players \nAssociation. The content is solely the responsibility of the authors and does not necessarily represent the official \nviews of Harvard Medical School, Harvard University or its affiliated academic health care centers, the National \nFootball Le"
+  },
+  {
+    "chunk_id": 68,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "School, Harvard University or its affiliated academic health care centers, the National \nFootball League Players Association, or Boston Children\u2019s Hospital. Dr. Kiapour is also a consultant for MIACH \nOrthopaedics. Both Drs. Murray and Fleming receive royalties from Springer Publishing. No other members of the \nresearch team have any potential conflicts of interest.\nREFERENCES\n1. Koff MF, Shah P, Pownder S, et al. 2013. Correlation of meniscal T2* with multiphoton microscopy, \nand change of arti"
+  },
+  {
+    "chunk_id": 69,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "Pownder S, et al. 2013. Correlation of meniscal T2* with multiphoton microscopy, \nand change of articular cartilage T2 in an ovine model of meniscal repair. Osteoarthritis Cartilage \n21:1083\u20131091. [PubMed: 23680878] \n2. Beveridge JE, Proffen BL, Karamchedu NP, et al. 2019. Cartilage damage is related to ACL stiffness \nin a porcine model of ACL repair. J Orthop Res 10:2249\u20132257.\n3. Biercevicz AM, Murray MM, Walsh EG, et al. 2014. T2* MR relaxometry and ligament volume are \nassociated with the str"
+  },
+  {
+    "chunk_id": 70,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "urray MM, Walsh EG, et al. 2014. T2* MR relaxometry and ligament volume are \nassociated with the structural properties of the healing ACL. J Orthop Res 32:492\u2013499. [PubMed: \n24338640] \n4. Biercevicz AM, Proffen BL, Murray MM, et al. 2015. T2* relaxometry and volume predict semi-\nquantitative histological scoring of an ACL bridge-enhanced primary repair in a porcine model. J \nOrthop Res 33:1180\u20131187. [PubMed: 25764143] \n5. Chu CR, Williams AA, West RV, et al. 2014. Quantitative magnetic resonance"
+  },
+  {
+    "chunk_id": 71,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "7. [PubMed: 25764143] \n5. Chu CR, Williams AA, West RV, et al. 2014. Quantitative magnetic resonance imaging UTE-T2* \nmapping of cartilage and meniscus healing after anatomic anterior cruciate ligament reconstruction. \nAm J Sports Med 42:1847\u20131856. [PubMed: 24812196] \n6. Williams A, Qian Y, Golla S, et al. 2012. UTE-T2* mapping detects sub-clinical meniscus injury \nafter anterior cruciate ligament tear. Osteoarthritis Cartilage 20:486\u2013494. [PubMed: 22306000] \n7. Williams AA, Titchenal MR, Andria"
+  },
+  {
+    "chunk_id": 72,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": " tear. Osteoarthritis Cartilage 20:486\u2013494. [PubMed: 22306000] \n7. Williams AA, Titchenal MR, Andriacchi TP, et al. 2018. MRI UTE-T2* profile characteristics \ncorrelate to walking mechanics and patient reported outcomes 2 years after ACL reconstruction. \nOsteoarthritis Cartilage 26:569\u2013579. [PubMed: 29426012] \n8. Titchenal MR, Williams AA, Chehab EF, et al. 2018. Cartilage subsurface changes to magnetic \nresonance imaging UTE-T2* 2 years after anterior cruciate ligament reconstruction correlate "
+  },
+  {
+    "chunk_id": 73,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "gnetic \nresonance imaging UTE-T2* 2 years after anterior cruciate ligament reconstruction correlate with \nwalking mechanics associated with knee osteoarthritis. Am J Sports Med 46:565\u2013572. [PubMed: \n29293364] \n9. Pedoia V, Li X, Su F, et al. 2016. Fully automatic analysis of the knee articular cartilage T1\u03c1 \nrelaxation time using voxel-based relaxometry. J Magn Reson Imaging 43:970\u2013980. [PubMed: \n26443990] \n10. Chen M, Qiu L, Shen S, et al. 2017. The influences of walking, running and stair acti"
+  },
+  {
+    "chunk_id": 74,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "26443990] \n10. Chen M, Qiu L, Shen S, et al. 2017. The influences of walking, running and stair activity on knee \narticular cartilage: Quantitative MRI using T1 rho and T2 mapping. PLoS One 12:e0187008. \n[PubMed: 29136015] \n11. Knox J, Pedoia V, Wang A, et al. 2018. Longitudinal changes in MR T1\u03c1/T2 signal of meniscus \nand its association with cartilage T1p/T2 in ACL-injured patients. Osteoarthritis Cartilage 26:689\u2013\n696. [PubMed: 29438746] \n12. Beveridge JE, Machan JT, Walsh EG, et al. 2018. Ma"
+  },
+  {
+    "chunk_id": 75,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "is Cartilage 26:689\u2013\n696. [PubMed: 29438746] \n12. Beveridge JE, Machan JT, Walsh EG, et al. 2018. Magnetic resonance measurements of tissue \nquantity and quality using T2* relaxometry predict temporal changes in the biomechanical \nproperties of the healing ACL. J Orthop Res 36:1701\u20131709. [PubMed: 29227559] \n13. Pauli C, Bae WC, Lee M, et al. 2012. Ultrashort\u2013echo time MR imaging of the patella with \nbicomponent analysis: correlation with histopathologic and polarized light microscopic findings. "
+  },
+  {
+    "chunk_id": 76,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "h \nbicomponent analysis: correlation with histopathologic and polarized light microscopic findings. \nRadiology 264:484\u2013493. [PubMed: 22653187] \n14. Biercevicz AM, Miranda DL, Machan JT, et al. 2013. In Situ, noninvasive, T2*-weighted MRI-\nderived parameters predict ex vivo structural properties of an anterior cruciate ligament \nFlannery et al.\nPage 9\nJ Orthop Res. Author manuscript; available in PMC 2022 April 01.\nAuthor Manuscript\nAuthor Manuscript\nAuthor Manuscript\nAuthor Manuscript\n\nreconstru"
+  },
+  {
+    "chunk_id": 77,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "MC 2022 April 01.\nAuthor Manuscript\nAuthor Manuscript\nAuthor Manuscript\nAuthor Manuscript\n\nreconstruction or bioenhanced primary repair in a porcine model. Am J Sports Med 41:560\u2013566. \n[PubMed: 23348076] \n15. Kiapour AM, Fleming BC, Murray MM. 2017. Structural and anatomic restoration of the anterior \ncruciate ligament is associated with less cartilage damage 1 year after surgery: healing ligament \nproperties affect cartilage damage. Orthop J Sports Med 5:2325967117723886. [PubMed: \n28875154] \n1"
+  },
+  {
+    "chunk_id": 78,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": " \nproperties affect cartilage damage. Orthop J Sports Med 5:2325967117723886. [PubMed: \n28875154] \n16. Dam EB, Lillholm M, Marques J, et al. 2015. Automatic segmentation of high- and low-field knee \nMRIs using knee image quantification with data from the osteoarthritis initiative. J Med Imaging \n(Bellingham) 2:024001. [PubMed: 26158096] \n17. Gaj S, Yang M, Nakamura K, et al. 2019. Automated cartilage and meniscus segmentation of knee \nMRI with conditional generative adversarial networks. Magn Re"
+  },
+  {
+    "chunk_id": 79,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "age and meniscus segmentation of knee \nMRI with conditional generative adversarial networks. Magn Reson Med 84:437\u2013449. [PubMed: \n31793071] \n18. Norman B, Pedoia V, Majumdar S. 2018. Use of 2D U-Net convolutional neural networks for \nautomated cartilage and meniscus segmentation of knee MR imaging data to determine \nrelaxometry and morphometry. Radiology 288:177\u2013185. [PubMed: 29584598] \n19. Ahn C, Bui TD, Lee Y-W, et al. 2016. Fully automated, level set-based segmentation for knee \nMRIs using an"
+  },
+  {
+    "chunk_id": 80,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": " Bui TD, Lee Y-W, et al. 2016. Fully automated, level set-based segmentation for knee \nMRIs using an adaptive force function and template: data from the osteoarthritis initiative. Biomed \nEng Online 15.\n20. Kashyap S, Oguz I, Zhang H, et al. 2016. Automated segmentation of knee MRI using hierarchical \nclassifiers and just enough interaction based learning: data from osteoarthritis initiative. Springer \nInternational Publishing; pp. 344\u2013351.\n21. Ho JH, Lung WZ, Seah CL, et al. Anterior cruciate l"
+  },
+  {
+    "chunk_id": 81,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "nger \nInternational Publishing; pp. 344\u2013351.\n21. Ho JH, Lung WZ, Seah CL, et al. Anterior cruciate ligament segmentation: using morphological \noperations with active contour. 2010 4th International Conference on Bioinformatics and \nBiomedical Engineering. Chengdu: IEEE; pp. 1\u20134.\n22. Lee H, Hong H, Kim J. 2014. Segmentation of anterior cruciate ligament in knee MR images using \ngraph cuts with patient-specific shape constraints and label refinement. Comput Biol Med 55:1\u2013\n10. [PubMed: 25305694] \n2"
+  },
+  {
+    "chunk_id": 82,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "ent-specific shape constraints and label refinement. Comput Biol Med 55:1\u2013\n10. [PubMed: 25305694] \n23. Akkus Z, Galimzianova A, Hoogi A, et al. 2017. Deep learning for brain MRI segmentation: state \nof the art and future directions. J Digit Imaging 30:449\u2013459. [PubMed: 28577131] \n24. Pereira S, Pinto A, Alves V, et al. 2016. Brain tumor segmentation using convolutional neural \nnetworks in MRI images. IEEE Trans Med Imaging 35:1240\u20131251. [PubMed: 26960222] \n25. Kamnitsas K, Ledig C, Newcombe VFJ,"
+  },
+  {
+    "chunk_id": 83,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "es. IEEE Trans Med Imaging 35:1240\u20131251. [PubMed: 26960222] \n25. Kamnitsas K, Ledig C, Newcombe VFJ, et al. 2017. Efficient multi-scale 3D CNN with fully \nconnected CRF for accurate brain lesion segmentation. Med Image Anal 36:61\u201378. [PubMed: \n27865153] \n26. Zhang W, Li R, Deng H, et al. 2015. Deep convolutional neural networks for multi-modality \nisointense infant brain image segmentation. Neuroimage 108:214\u2013224. [PubMed: 25562829] \n27. Ronneberger O, Fischer P, Brox T. 2015. U-Net: convolution"
+  },
+  {
+    "chunk_id": 84,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "mage 108:214\u2013224. [PubMed: 25562829] \n27. Ronneberger O, Fischer P, Brox T. 2015. U-Net: convolutional networks for biomedical image \nsegmentation. Springer International Publishing; pp. 234\u2013241.\n28. Murray MM, Kalish LA, Fleming BC, et al. 2019. Bridge-enhanced anterior cruciate ligament \nrepair: two-year results of a first-in-human study. Orthop J Sports Med 7:2325967118824356. \n[PubMed: 30923725] \n29. Murray MM, Kiapour AM, Kalish LA, et al. 2019. Predictors of healing ligament size and \nmagn"
+  },
+  {
+    "chunk_id": 85,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "5] \n29. Murray MM, Kiapour AM, Kalish LA, et al. 2019. Predictors of healing ligament size and \nmagnetic resonance signal intensity at 6 months after bridge-enhanced anterior cruciate ligament \nrepair. Am J Sports Med 47:1361\u20131369. [PubMed: 30986359] \n30. Murray MM, Fleming BC, Badger GJ, et al. 2020. Bridge-Enhanced Anterior Cruciate Ligament \nRepair Is Not Inferior to Autograft Anterior Cruciate Ligament Reconstruction at 2 Years: Results \nof a Prospective Randomized Clinical Trial. Am J Sport"
+  },
+  {
+    "chunk_id": 86,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": " Ligament Reconstruction at 2 Years: Results \nof a Prospective Randomized Clinical Trial. Am J Sports Med 48:1305\u20131315. [PubMed: \n32298131] \n31. Abadi M, Agarwal A, Barham P, et al. 2015. TensorFlow: large-scale machine learning on \nheterogeneous distributed systems.\n32. Chollet F 2015. Keras: the python deep learning library. GitHub.\n33. O\u2019Malley T, Bursztein E, Long J, et al. 2020. Keras Tuner. GitHub.\n34. Kingma DP, Ba JL. 2017. Adam: a method for stochastic optimization. ArXiv.\nFlannery et a"
+  },
+  {
+    "chunk_id": 87,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "GitHub.\n34. Kingma DP, Ba JL. 2017. Adam: a method for stochastic optimization. ArXiv.\nFlannery et al.\nPage 10\nJ Orthop Res. Author manuscript; available in PMC 2022 April 01.\nAuthor Manuscript\nAuthor Manuscript\nAuthor Manuscript\nAuthor Manuscript\n\n35. Virtanen P, Gommers R, Oliphant TE, et al. 2020. SciPy 1.0: fundamental algorithms for scientific \ncomputing in Python. Nat Methods 17:261\u2013272. [PubMed: 32015543] \n36. Skipper S, Josef P. 2010. Statsmodels: Econometric and Statistical Modeling wit"
+  },
+  {
+    "chunk_id": 88,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "bMed: 32015543] \n36. Skipper S, Josef P. 2010. Statsmodels: Econometric and Statistical Modeling with Python. The 9th \nPython in Science Conference.\n37. Geron A 2019. Hands-On Machine Learning with Scikit-Learn, Keras & TensorFlow, 2nd ed: \nO\u2019Reilly Media Inc.; 819 p.\nFlannery et al.\nPage 11\nJ Orthop Res. Author manuscript; available in PMC 2022 April 01.\nAuthor Manuscript\nAuthor Manuscript\nAuthor Manuscript\nAuthor Manuscript\n\nFigure 1. \nExample modified 2D U-Net architecture (note: final model "
+  },
+  {
+    "chunk_id": 89,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": " Manuscript\nAuthor Manuscript\n\nFigure 1. \nExample modified 2D U-Net architecture (note: final model depth was tuned as \nhyperparameter).\nFlannery et al.\nPage 12\nJ Orthop Res. Author manuscript; available in PMC 2022 April 01.\nAuthor Manuscript\nAuthor Manuscript\nAuthor Manuscript\nAuthor Manuscript\n\nFigure 2. \nFinal model test set performance violin plot with the data points superimposed of the \nanatomical similarity metrics.\nFlannery et al.\nPage 13\nJ Orthop Res. Author manuscript; available in PM"
+  },
+  {
+    "chunk_id": 90,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "tomical similarity metrics.\nFlannery et al.\nPage 13\nJ Orthop Res. Author manuscript; available in PMC 2022 April 01.\nAuthor Manuscript\nAuthor Manuscript\nAuthor Manuscript\nAuthor Manuscript\n\nFigure 3. \nExample sagittal CISS slice segmentations from the final model predictions on randomly \nselected test set subjects. Each row is the same slice. Shown are the unsegmented slice (MR \nImage), ground truth manual segmentation (Ground Truth), automatic segmentation \nprediction (Prediction), and an overl"
+  },
+  {
+    "chunk_id": 91,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "th manual segmentation (Ground Truth), automatic segmentation \nprediction (Prediction), and an overlay of manual and predicted segmentations (Contours \nOverlay).\nFlannery et al.\nPage 14\nJ Orthop Res. Author manuscript; available in PMC 2022 April 01.\nAuthor Manuscript\nAuthor Manuscript\nAuthor Manuscript\nAuthor Manuscript\n\nFigure 4. \nExample sagittal CISS slice segmentations showing areas of disagreement between the \nmodel predictions and ground truth. Each row is the same slice. Shown are the un"
+  },
+  {
+    "chunk_id": 92,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "eement between the \nmodel predictions and ground truth. Each row is the same slice. Shown are the unsegmented \nslice (MR Image), ground truth manual segmentation (Ground Truth), automatic \nsegmentation prediction (Prediction), and an overlay of manual and predicted segmentations \n(Contours Overlay).\nFlannery et al.\nPage 15\nJ Orthop Res. Author manuscript; available in PMC 2022 April 01.\nAuthor Manuscript\nAuthor Manuscript\nAuthor Manuscript\nAuthor Manuscript\n\nFigure 5. \nFinal model test set perfo"
+  },
+  {
+    "chunk_id": 93,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "uscript\nAuthor Manuscript\nAuthor Manuscript\nAuthor Manuscript\n\nFigure 5. \nFinal model test set performance violin plot with paired data points of the quantitative \nmeasures taken from ground truth manual segmentation and predicted automatic \nsegmentation masks (Note: signal intensities are standardized by z-scoring for each image \nvolume; Paired data points represent results on the same MRI scan; Summary statistics in \nAppendix 1).\nFlannery et al.\nPage 16\nJ Orthop Res. Author manuscript; availab"
+  },
+  {
+    "chunk_id": 94,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "Summary statistics in \nAppendix 1).\nFlannery et al.\nPage 16\nJ Orthop Res. Author manuscript; available in PMC 2022 April 01.\nAuthor Manuscript\nAuthor Manuscript\nAuthor Manuscript\nAuthor Manuscript\n\nFigure 6. \nTest subset performance violin plot with paired data points on anatomical similarity metrics \nof manual segmenters (A, B), ground truth segmenter re-segmentation (Retest), and final \nautomatic segmentation model (Note: * indicates P<.05; ** indicates P<.005; Paired data \npoints represent pe"
+  },
+  {
+    "chunk_id": 95,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "c segmentation model (Note: * indicates P<.05; ** indicates P<.005; Paired data \npoints represent performance on the same MRI scan; Summary statistics in Appendix 1).\nFlannery et al.\nPage 17\nJ Orthop Res. Author manuscript; available in PMC 2022 April 01.\nAuthor Manuscript\nAuthor Manuscript\nAuthor Manuscript\nAuthor Manuscript\n\nFigure 7. \nTest subset performance violin plot with paired data points on quantitative measures derived \nfrom segmentation masks of manual segmenters (A, B), ground truth "
+  },
+  {
+    "chunk_id": 96,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "on quantitative measures derived \nfrom segmentation masks of manual segmenters (A, B), ground truth segmenter re-\nsegmentation (Retest), and final automatic segmentation model (Note: signal intensities are \nstandardized by z-scoring for each image volume; Paired data points represent performance \non the same MRI scan; Summary statistics in Appendix 1).\nFlannery et al.\nPage 18\nJ Orthop Res. Author manuscript; available in PMC 2022 April 01.\nAuthor Manuscript\nAuthor Manuscript\nAuthor Manuscript\nAu"
+  },
+  {
+    "chunk_id": 97,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "manuscript; available in PMC 2022 April 01.\nAuthor Manuscript\nAuthor Manuscript\nAuthor Manuscript\nAuthor Manuscript\n\nAuthor Manuscript\nAuthor Manuscript\nAuthor Manuscript\nAuthor Manuscript\nFlannery et al.\nPage 19\nTable 1.\nHyperparameter search space for Bayesian optimization.\nHyperparameter\nValues\nModel Depth\n[3, 4, 5]\nBatch Size\n[10, 20, 32]\nNormalization Method\n[Batch, Local Response, None]\nFilter Sizes\n[[16, 32, 64, 32, 16],\n[32, 64,\n128, 64, 32],\n[64, 128, 256,128, 64],\n[16, 32, 64, 128,\n64,"
+  },
+  {
+    "chunk_id": 98,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "er Sizes\n[[16, 32, 64, 32, 16],\n[32, 64,\n128, 64, 32],\n[64, 128, 256,128, 64],\n[16, 32, 64, 128,\n64, 32, 16],\n[32, 64, 128, 256, 128, 64, 32],\n[64, 128,\n256, 512, 256, 128, 64],\n[16, 32, 64, 128, 256, 128, 64, 32,\n16],\n[32, 64, 128, 256, 512, 256, 128, 64, 32],\n[64, 128,\n256, 512, 1024, 512, 256, 128, 64]]\nKernel Size\n[3x3, 5x5, 7x7]\nAlpha\n[0, 0.1, 0.2, 0.3, 0.4, 0.5]\nDropout\n[0, 0.1, 0.2, 0.3, 0.4, 0.5]\nLearning Rate\n[1e-3, 1e-4, 1e-5, 1e-3:1e-5 (variable; patience=5)]\nJ Orthop Res. Author manu"
+  },
+  {
+    "chunk_id": 99,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "4, 0.5]\nLearning Rate\n[1e-3, 1e-4, 1e-5, 1e-3:1e-5 (variable; patience=5)]\nJ Orthop Res. Author manuscript; available in PMC 2022 April 01.\n\nAuthor Manuscript\nAuthor Manuscript\nAuthor Manuscript\nAuthor Manuscript\nFlannery et al.\nPage 20\nTable 2.\nSummary of optimal hyperparameters for final model configuration.\nHyperparameter\nValue\nModel Depth\n5\nBatch Size\n10\nNormalization Method\nBatch\nFilter Sizes\n[64, 128, 256, 512, 1024, 512, 256, 128, 64]\nKernel Size\n5x5\nAlpha\n0\nDropout\n0.5\nLearning Rate\n1e-3"
+  },
+  {
+    "chunk_id": 100,
+    "filename": "paper19_mri_segmentation.pdf",
+    "text": "\n[64, 128, 256, 512, 1024, 512, 256, 128, 64]\nKernel Size\n5x5\nAlpha\n0\nDropout\n0.5\nLearning Rate\n1e-3:1e-5 (variable; patience=5)\nJ Orthop Res. Author manuscript; available in PMC 2022 April 01.\n\n"
+  }
+]
